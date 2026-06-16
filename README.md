@@ -20,7 +20,6 @@ The V.O.T. is our core integrity framework. It acts as an immutable registry for
 
 ## Project Status
 **Status:** `ACTIVE // SECURE`
-**Precision Threshold:** `0.02%`
 
 ## Getting Started
 DokorAI Labs is currently operating under a restricted-access model. 
