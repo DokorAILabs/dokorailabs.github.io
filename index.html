@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       VIEWPORT — prevent iOS auto-zoom on input; explicit width
+  ════════════════════════════════════════════════════════════════ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SEO
+  ════════════════════════════════════════════════════════════════ -->
+  <title>DokorAI Labs — Sovereign Intelligence. Engineered Accountability.</title>
+  <meta name="description" content="DokorAI Labs builds private, sovereign AI infrastructure for high-stakes institutional decision-making. Zero-trust architecture. No telemetry. No margin for error.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dokorailabs.com/">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       OPEN GRAPH — LinkedIn / Slack / iMessage previews
+  ════════════════════════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://dokorailabs.com/">
+  <meta property="og:title"       content="DokorAI Labs — Sovereign Intelligence">
+  <meta property="og:description" content="Private SaaS for high-stakes decision making. Zero-trust LLM infrastructure for institutions that cannot afford a margin of error.">
+  <meta property="og:image"       content="https://dokorailabs.com/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name"   content="DokorAI Labs">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       TWITTER / X CARD
+  ════════════════════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@dokorailabs">
+  <meta name="twitter:title"       content="DokorAI Labs — Sovereign Intelligence">
+  <meta name="twitter:description" content="Private SaaS for high-stakes decision making. Zero-trust LLM infrastructure.">
+  <meta name="twitter:image"       content="https://dokorailabs.com/og-image.png">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PWA
+  ════════════════════════════════════════════════════════════════ -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#050505">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STRUCTURED DATA — Schema.org Organization + Website
+  ════════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dokorailabs.com/#org",
+        "name": "DokorAI Labs",
+        "url": "https://dokorailabs.com/",
+        "description": "Private sovereign AI infrastructure for high-stakes institutional decision-making.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "dokorailabs@proton.me",
+          "contactType": "Sales"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dokorailabs.com/#website",
+        "url": "https://dokorailabs.com/",
+        "name": "DokorAI Labs",
+        "publisher": { "@id": "https://dokorailabs.com/#org" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FONT
+  ════════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       DESIGN TOKENS
+    ════════════════════════════════════════════════════════════ */
+    :root {
+      --bg:          #050505;
+      --surface:     #0a0a0a;
+      --surface-2:   #0d1117;
+      --border:      #27272a;
+      --border-dim:  #1a1a1d;
+      --text-main:   #e4e4e7;
+      --text-dim:    #71717a;
+      --text-mid:    #a1a1aa;
+      --accent:      #3B82F6;
+      --accent-dim:  rgba(59,130,246,0.08);
+      --red:         #f87171;
+      --green:       #4ade80;
+      --danger:      #ff3b5c;
+      --font:        'JetBrains Mono', monospace;
+      --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESET
+    ════════════════════════════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ═══════════════════════════════════════════════════════════
+       SCANLINE — fixed overlay, composited on GPU with will-change
+       On mobile we skip backdrop-filter entirely and use a solid
+       semi-transparent bg instead (see .status-bar media query)
+    ════════════════════════════════════════════════════════════ */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      will-change: transform; /* promote to own layer, prevent repaint */
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent      0px,
+        transparent      2px,
+        rgba(0,0,0,0.05) 2px,
+        rgba(0,0,0,0.05) 4px
+      );
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       BODY
+    ════════════════════════════════════════════════════════════ */
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       SKIP LINK — keyboard accessibility
+    ════════════════════════════════════════════════════════════ */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.7rem;
+      font-family: var(--font);
+      letter-spacing: 0.08em;
+      z-index: 10000;
+      transition: top 0.15s;
+    }
+    .skip-link:focus { top: 0.5rem; }
+
+    /* ═══════════════════════════════════════════════════════════
+       STATUS BAR
+       Mobile: no backdrop-filter (GPU/battery drain); solid bg
+    ════════════════════════════════════════════════════════════ */
+    .status-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      will-change: transform; /* own compositing layer */
+      border-bottom: 1px solid var(--border);
+      padding: 0.55rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .status-bar::-webkit-scrollbar { display: none; }
+
+    @media (max-width: 680px) {
+      .status-bar {
+        /* Drop the blur entirely on mobile — no GPU compositing cost */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: #050505;
+        gap: 1rem;
+        padding: 0.55rem 1.2rem;
+        font-size: 0.6rem;
+      }
+    }
+
+    .status-bar .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      flex-shrink: 0;
+      animation: pulse-dot 2.4s ease-in-out infinite;
+    }
+    .status-bar span { color: var(--text-dim); white-space: nowrap; }
+    .status-bar .s-label { color: var(--accent); }
+    .status-bar .sep { color: var(--border); }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--accent); }
+      50%       { opacity: 0.4; box-shadow: 0 0 3px var(--accent); }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       HEADER
+    ════════════════════════════════════════════════════════════ */
+    header {
+      padding: 3.5rem 2.5rem 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    /* ── LOGO + GLITCH ──────────────────────────────────────────
+       Old approach: steps(1) jumps caused 1-frame tearing on
+       120 Hz screens. New approach: keyframe easing with
+       opacity + translate only — GPU-composited, no layout.
+    ─────────────────────────────────────────────────────────── */
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #fff;
+      position: relative;
+      cursor: default;
+      user-select: none;
+    }
+    .logo::before,
+    .logo::after {
+      content: 'DOKORAI LABS';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0;
+      will-change: opacity, transform;
+    }
+    .logo::before {
+      color: var(--accent);
+      clip-path: polygon(0 25%, 100% 25%, 100% 48%, 0 48%);
+      animation: glitch-a 7s ease-in-out infinite;
+    }
+    .logo::after {
+      color: var(--danger);
+      clip-path: polygon(0 58%, 100% 58%, 100% 76%, 0 76%);
+      animation: glitch-b 7s ease-in-out infinite;
+    }
+
+    /* Smooth glitch: opacity only jumps fast; translate eases slightly */
+    @keyframes glitch-a {
+      0%, 93%, 100% { opacity: 0; transform: translateX(0); }
+      94%            { opacity: 1; transform: translateX(-3px); }
+      95%            { opacity: 0; transform: translateX(0); }
+      96%            { opacity: 0.8; transform: translateX(2px); }
+      97%            { opacity: 0; transform: translateX(0); }
+    }
+    @keyframes glitch-b {
+      0%, 93.5%, 100% { opacity: 0; transform: translateX(0); }
+      94.5%            { opacity: 1; transform: translateX(3px); }
+      95.5%            { opacity: 0; transform: translateX(0); }
+    }
+
+    .header-meta {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      text-align: right;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════════════════════ */
+    .hero {
+      padding: 6rem 2.5rem 5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border-dim) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-dim) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      position: relative;
+    }
+    .hero h1 .accent-word {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--accent);
+    }
+    .hero-sub {
+      margin-top: 1.4rem;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .hero-body {
+      margin: 2.5rem auto 0;
+      max-width: 680px;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+      position: relative;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       SECTION CHROME
+    ════════════════════════════════════════════════════════════ */
+    .rule {
+      border: none;
+      border-top: 1px solid var(--border-dim);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section-wrapper {
+      padding: 4.5rem 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border-dim);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-label {
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--border), transparent);
+    }
+    .section-num {
+      font-size: 0.6rem;
+      color: var(--border);
+      letter-spacing: 0.1em;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       TECH CORE — CARDS
+    ════════════════════════════════════════════════════════════ */
+    .tech-desc {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      max-width: 700px;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-dim);
+    }
+    .card {
+      background: var(--surface);
+      padding: 2.2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s var(--ease);
+    }
+    .card:hover { background: var(--surface-2); }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--border) 0.6px, transparent 0.6px);
+      background-size: 12px 12px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s var(--ease);
+    }
+    .card:hover::after { transform: scaleX(1); }
+    .card-corner {
+      position: absolute;
+      width: 10px; height: 10px;
+      border-color: var(--accent);
+      border-style: solid;
+      opacity: 0.5;
+      transition: opacity 0.25s;
+    }
+    .card:hover .card-corner { opacity: 1; }
+    .card-corner.tl { top: 8px; left: 8px;   border-width: 1px 0 0 1px; }
+    .card-corner.tr { top: 8px; right: 8px;  border-width: 1px 1px 0 0; }
+    .card-corner.bl { bottom: 8px; left: 8px;  border-width: 0 0 1px 1px; }
+    .card-corner.br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
+    .card-tag {
+      font-size: 0.58rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+    .card p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.75;
+      position: relative;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       GOVERNANCE
+    ════════════════════════════════════════════════════════════ */
+    .gov-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border-dim);
+    }
+    .gov-box {
+      background: var(--surface);
+      padding: 2.5rem 2rem;
+      position: relative;
+      border-left: 2px solid transparent;
+      transition: background 0.25s;
+    }
+    .gov-box.primary   { border-color: var(--accent); }
+    .gov-box.secondary { border-color: var(--text-dim); }
+    .gov-box:hover     { background: var(--surface-2); }
+    .gov-box h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.7rem;
+    }
+    .gov-box p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.75;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       BENCHMARK — TABS (full ARIA tab pattern)
+    ════════════════════════════════════════════════════════════ */
+    .bench-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-dim);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .bench-tabs::-webkit-scrollbar { display: none; }
+
+    .bench-tab {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.7rem 1.4rem;
+      font-family: var(--font);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      cursor: pointer;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: -1px;
+      outline: none;
+      position: relative;
+    }
+    .bench-tab:hover { color: var(--text-mid); }
+    .bench-tab[aria-selected="true"] {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    /* Visible focus ring for keyboard users */
+    .bench-tab:focus-visible::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    .bench-panel { display: none; }
+    .bench-panel.active { display: block; }
+
+    /* ═══════════════════════════════════════════════════════════
+       BENCHMARK — COMPARISON TABLE
+    ════════════════════════════════════════════════════════════ */
+    .bench-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+    .bench-table thead tr { border-bottom: 1px solid var(--border); }
+    .bench-table th {
+      padding: 0.7rem 1rem;
+      text-align: left;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .bench-table th:first-child { color: var(--accent); }
+    .bench-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-dim);
+      color: var(--text-mid);
+      vertical-align: middle;
+    }
+    .bench-table tr:last-child td { border-bottom: none; }
+    .bench-table tr:hover td { background: rgba(255,255,255,0.015); }
+    .bench-table td:first-child {
+      color: var(--text-main);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 0.7rem;
+    }
+    .bench-table td.base-val { color: var(--text-dim); }
+    .bench-table td.ft-val   { color: var(--green); }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .badge-base { background: rgba(113,113,122,0.12); color: var(--text-dim); }
+    .badge-ft   { background: rgba(74,222,128,0.1);  color: var(--green); }
+
+    .takeaway {
+      border-left: 2px solid var(--accent);
+      padding: 1.2rem 1.4rem;
+      background: var(--accent-dim);
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .takeaway strong { color: var(--text-main); }
+
+    /* ═══════════════════════════════════════════════════════════
+       BENCHMARK — SIMULATION SCORECARD
+    ════════════════════════════════════════════════════════════ */
+    .sim-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-dim);
+      margin-bottom: 2rem;
+    }
+    .sim-cell {
+      background: var(--surface);
+      padding: 1.6rem 1.4rem;
+    }
+    .sim-cell-label {
+      font-size: 0.58rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .sim-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+    .sim-key { font-size: 0.65rem; color: var(--text-dim); }
+    .sim-val { font-size: 0.72rem; font-weight: 700; }
+    .sim-val.neutral { color: var(--text-mid); }
+    .sim-val.neg     { color: var(--red); }
+    .sim-val.pos     { color: var(--green); }
+
+    .delta-bar-wrap {
+      margin-top: 0.6rem;
+      height: 3px;
+      background: var(--border-dim);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .delta-bar {
+      height: 100%;
+      border-radius: 2px;
+      width: 0;
+      transition: width 1.2s var(--ease);
+    }
+    .delta-bar.neg { background: var(--red); }
+    .delta-bar.pos { background: var(--green); }
+
+    /* ═══════════════════════════════════════════════════════════
+       BENCHMARK — METHODOLOGY TERMINAL
+    ════════════════════════════════════════════════════════════ */
+    .terminal-block {
+      background: var(--surface-2);
+      border: 1px solid var(--border-dim);
+      border-left: 2px solid var(--border);
+      padding: 1.8rem 2rem;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      position: relative;
+    }
+    .terminal-block::before {
+      content: '> METHODOLOGY_DISCLAIMER';
+      display: block;
+      font-size: 0.6rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+    .terminal-block em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       CONTACT CARD + CTA
+    ════════════════════════════════════════════════════════════ */
+    .contact-card {
+      border: 1px solid var(--border-dim);
+      padding: 3rem;
+      margin-top: 2rem;
+      position: relative;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .contact-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .contact-email {
+      font-size: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      position: relative;
+      display: inline-block;
+      transition: color 0.2s;
+    }
+    .contact-email:hover,
+    .contact-email:focus-visible { color: #fff; outline: none; text-decoration: underline; }
+
+    /* ── CTA BLOCK ────────────────────────────────────────────── */
+    .cta-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-dim);
+      position: relative;
+    }
+    .cta-label {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      flex: 0 0 auto;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.8rem;
+      border: 1px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      flex: 0 0 auto;
+      outline: none;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover::before,
+    .cta-btn:focus-visible::before { opacity: 0.1; }
+    .cta-btn:focus-visible { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+    .cta-btn .arrow { font-size: 0.9rem; transition: transform 0.2s var(--ease); }
+    .cta-btn:hover .arrow { transform: translateX(3px); }
+
+    .cta-btn-ghost {
+      background: transparent;
+      color: var(--text-mid);
+      border-color: var(--border);
+    }
+    .cta-btn-ghost:hover { color: var(--text-main); border-color: var(--text-mid); }
+
+    .contact-key {
+      margin-top: 2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border-dim);
+      position: relative;
+    }
+    .contact-key-label {
+      font-size: 0.58rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .contact-key-val {
+      font-size: 0.7rem;
+      color: var(--text-mid);
+      word-break: break-all;
+      line-height: 1.6;
+    }
+
+    .contact-corner {
+      position: absolute;
+      width: 14px; height: 14px;
+      border-color: var(--accent);
+      border-style: solid;
+      opacity: 0.4;
+    }
+    .contact-corner.tl { top: 10px; left: 10px;   border-width: 1px 0 0 1px; }
+    .contact-corner.tr { top: 10px; right: 10px;  border-width: 1px 1px 0 0; }
+    .contact-corner.bl { bottom: 10px; left: 10px;  border-width: 0 0 1px 1px; }
+    .contact-corner.br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+
+    /* ═══════════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border-dim);
+      padding: 2.5rem 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    footer p {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      max-width: 600px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+    .footer-sig {
+      font-size: 0.6rem;
+      color: var(--border);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+      line-height: 1.8;
+      text-align: right;
+    }
+    .footer-copy {
+      font-size: 0.6rem;
+      color: var(--border);
+      letter-spacing: 0.05em;
+      margin-top: 0.4rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       SCROLL REVEAL
+    ════════════════════════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESPONSIVE OVERRIDES
+    ════════════════════════════════════════════════════════════ */
+    @media (max-width: 680px) {
+      body { font-size: 13px; }
+      header, .hero, .section-wrapper, footer { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .grid          { grid-template-columns: 1fr; }
+      .gov-container { grid-template-columns: 1fr; }
+      .sim-grid      { grid-template-columns: 1fr; }
+      footer         { flex-direction: column; }
+      .footer-sig    { text-align: left; }
+      .hero h1       { font-size: 1.9rem; }
+      .cta-block     { flex-direction: column; align-items: flex-start; }
+      .cta-btn       { width: 100%; justify-content: center; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       REDUCED MOTION
+    ════════════════════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .delta-bar { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip nav for keyboard/screen-reader users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ── STATUS BAR ─────────────────────────────────────────── -->
+  <div class="status-bar" role="status" aria-label="System status">
+    <div class="dot" aria-hidden="true"></div>
+    <span class="s-label">SYS_STATUS</span>
+    <span class="sep" aria-hidden="true">//</span>
+    <span>VOT_INTEGRITY: <span class="s-label">VERIFIED</span></span>
+    <span class="sep" aria-hidden="true">//</span>
+    <span>TELEMETRY: <span style="color:var(--danger)">DISABLED</span></span>
+    <span class="sep" aria-hidden="true">//</span>
+    <span>AIR_GAP: <span class="s-label">ACTIVE</span></span>
+  </div>
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <header>
+    <div class="logo" aria-label="DokorAI Labs">DOKORAI LABS</div>
+    <div class="header-meta" aria-hidden="true">
+      <div>INFRASTRUCTURE // v2.1</div>
+      <div style="color:var(--border);">CLASSIFIED — AUTHORIZED ACCESS ONLY</div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO ───────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Sovereign <span class="accent-word">Intelligence.</span><br>Engineered Accountability.</h1>
+      <p class="hero-sub">Private SaaS for high-stakes decision making.</p>
+      <p class="hero-body">Error is not a statistical variable; it is a choice. At DokorAI Labs, we do not build AI to increase noise; we build it to enforce causal precision in environments of high uncertainty. Sovereign technology for institutions that cannot afford a margin of error.</p>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ── 01 TECHNICAL CORE ──────────────────────────────────── -->
+    <section class="section-wrapper reveal" aria-labelledby="sec-tech">
+      <div class="section-header">
+        <span class="section-label" id="sec-tech">Technical Core</span>
+        <div class="section-line" aria-hidden="true"></div>
+        <span class="section-num" aria-hidden="true">01</span>
+      </div>
+      <p class="tech-desc">Proprietary stack designed for zero-trust environments. Our core integrates an optimized, locally-trained LLM with a hybrid MCP memory layer, enabling real-time causal reasoning without external telemetry or data leakage.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="card-corner tl" aria-hidden="true"></div><div class="card-corner tr" aria-hidden="true"></div>
+          <div class="card-corner bl" aria-hidden="true"></div><div class="card-corner br" aria-hidden="true"></div>
+          <div class="card-tag">MODULE_01</div>
+          <h3>Core</h3>
+          <p>Private LLM: Open weights &amp; custom training.</p>
+        </div>
+        <div class="card">
+          <div class="card-corner tl" aria-hidden="true"></div><div class="card-corner tr" aria-hidden="true"></div>
+          <div class="card-corner bl" aria-hidden="true"></div><div class="card-corner br" aria-hidden="true"></div>
+          <div class="card-tag">MODULE_02</div>
+          <h3>Memory</h3>
+          <p>Hybrid MCP: Vectorized graphs, immutable.</p>
+        </div>
+        <div class="card">
+          <div class="card-corner tl" aria-hidden="true"></div><div class="card-corner tr" aria-hidden="true"></div>
+          <div class="card-corner bl" aria-hidden="true"></div><div class="card-corner br" aria-hidden="true"></div>
+          <div class="card-tag">MODULE_03</div>
+          <h3>Control</h3>
+          <p>Zero-leak architecture. Air-gapped logic.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ── 02 GOVERNANCE ──────────────────────────────────────── -->
+    <section class="section-wrapper reveal" aria-labelledby="sec-gov">
+      <div class="section-header">
+        <span class="section-label" id="sec-gov">Governance Model</span>
+        <div class="section-line" aria-hidden="true"></div>
+        <span class="section-num" aria-hidden="true">02</span>
+      </div>
+      <div class="gov-container">
+        <div class="gov-box primary">
+          <h4>Causal Foundation</h4>
+          <p>Non-Profit IP &amp; do-calculus registry.</p>
+        </div>
+        <div class="gov-box secondary">
+          <h4>DokorAI Services</h4>
+          <p>Execution, API &amp; enterprise integration.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ── 03 PERFORMANCE BENCHMARK ──────────────────────────── -->
+    <section class="section-wrapper reveal" aria-labelledby="sec-bench">
+      <div class="section-header">
+        <span class="section-label" id="sec-bench">Performance Benchmark</span>
+        <div class="section-line" aria-hidden="true"></div>
+        <span class="section-num" aria-hidden="true">03</span>
+      </div>
+
+      <!-- Tab list — full ARIA tab pattern -->
+      <div
+        role="tablist"
+        aria-label="Benchmark views"
+        class="bench-tabs"
+        id="bench-tablist"
+      >
+        <button role="tab" class="bench-tab" aria-selected="true"  aria-controls="panel-compare" id="tab-compare" tabindex="0">Comparative Analysis</button>
+        <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-sim"     id="tab-sim"     tabindex="-1">Financial Simulation</button>
+        <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-radar"   id="tab-radar"   tabindex="-1">Capability Radar</button>
+        <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-method"  id="tab-method"  tabindex="-1">Methodology</button>
+      </div>
+
+      <!-- Panel 1: Comparative Table -->
+      <div role="tabpanel" class="bench-panel active" id="panel-compare" aria-labelledby="tab-compare">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th scope="col">Metric</th>
+              <th scope="col"><span class="badge badge-base">Base Model</span></th>
+              <th scope="col"><span class="badge badge-ft">Fine-Tuned</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Causal Density</td>         <td class="base-val">Linear / Superficial</td>      <td class="ft-val">High (Chain-of-thought)</td></tr>
+            <tr><td>Actionability</td>           <td class="base-val">Descriptive / Theoretical</td> <td class="ft-val">Strategic / Prescriptive</td></tr>
+            <tr><td>Communication Efficiency</td><td class="base-val">Low (Redundant)</td>           <td class="ft-val">High (Executive-level)</td></tr>
+            <tr><td>Risk Analysis Depth</td>     <td class="base-val">Basic</td>                     <td class="ft-val">Advanced (Secondary effects)</td></tr>
+            <tr><td>Strategic Insight</td>       <td class="base-val">Minimal</td>                   <td class="ft-val">High (Decision-support)</td></tr>
+          </tbody>
+        </table>
+        <div class="takeaway" role="note">
+          While the Base model acts as a <strong>dictionary</strong>, the Fine-Tuned model performs as a <strong>strategic analyst</strong> — mapping systemic risks such as the "Dual Squeeze" on liquidity and equity issuance during bearish markets.
+        </div>
+      </div>
+
+      <!-- Panel 2: Financial Simulation -->
+      <div role="tabpanel" class="bench-panel" id="panel-sim" aria-labelledby="tab-sim">
+        <p style="font-size:0.72rem;color:var(--text-dim);margin-bottom:1.8rem;line-height:1.8;">
+          Scenario: Mid-Cap firm — $100M total debt (50% fixed / 50% variable). +100bps base rate hike.
+        </p>
+        <div class="sim-grid">
+          <div class="sim-cell">
+            <div class="sim-cell-label">Interest — Variable (50M)</div>
+            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">$2.0M</span></div>
+            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">$2.5M</span></div>
+            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="50"></div></div>
+            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">+$0.5M cost</div>
+          </div>
+          <div class="sim-cell">
+            <div class="sim-cell-label">EBITDA</div>
+            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">$15.0M</span></div>
+            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neutral">$15.0M</span></div>
+            <div class="delta-bar-wrap"><div class="delta-bar pos" data-width="0"></div></div>
+            <div style="font-size:0.58rem;color:var(--text-dim);margin-top:0.5rem;">No change</div>
+          </div>
+          <div class="sim-cell">
+            <div class="sim-cell-label">Interest Total</div>
+            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">$4.25M</span></div>
+            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">$4.75M</span></div>
+            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="40"></div></div>
+            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">+11.8% increment</div>
+          </div>
+          <div class="sim-cell">
+            <div class="sim-cell-label">ICR (EBITDA / Int)</div>
+            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">3.53x</span></div>
+            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">3.16x</span></div>
+            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="65"></div></div>
+            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">−10.5% deterioration</div>
+          </div>
+          <div class="sim-cell">
+            <div class="sim-cell-label">Emission Capacity</div>
+            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">High (P/E 12x)</span></div>
+            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">Reduced (P/E 9x)</span></div>
+            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="75"></div></div>
+            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">−25% valuation drop</div>
+          </div>
+          <div class="sim-cell" style="display:flex;flex-direction:column;justify-content:center;background:var(--accent-dim);border-left:2px solid var(--accent);">
+            <div class="sim-cell-label" style="color:var(--accent);">Key Insight</div>
+            <p style="font-size:0.7rem;color:var(--text-mid);line-height:1.8;">A 100bps hike erodes ICR by &gt;10%, threatening covenants while increasing equity dilution costs by ~2%.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Radar Chart -->
+      <div role="tabpanel" class="bench-panel" id="panel-radar" aria-labelledby="tab-radar">
+        <p style="font-size:0.72rem;color:var(--text-dim);margin-bottom:2rem;line-height:1.8;">
+          Capability radar — Base Model vs. Fine-Tuned across five evaluation dimensions. Cold-start, identical test conditions.
+        </p>
+        <canvas id="radarCanvas" width="560" height="420" style="max-width:100%;display:block;margin:0 auto;" aria-label="Radar chart comparing Base Model and Fine-Tuned model capabilities across five dimensions"></canvas>
+        <div style="display:flex;gap:2rem;justify-content:center;margin-top:1.5rem;" aria-hidden="true">
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.62rem;color:var(--text-dim);">
+            <div style="width:24px;height:2px;background:var(--text-dim);opacity:0.5;"></div> Base Model
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.62rem;color:var(--accent);">
+            <div style="width:24px;height:2px;background:var(--accent);"></div> Fine-Tuned
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Methodology -->
+      <div role="tabpanel" class="bench-panel" id="panel-method" aria-labelledby="tab-method">
+        <div class="terminal-block">
+          To ensure a fair and rigorous comparison between the models, all test cases were executed under identical environmental conditions using a <em>'blank context' (cold-start) setup</em> to measure maximum baseline performance.<br><br>
+          It is important to note that these metrics represent the <em>raw performance</em> of the LLMs in isolation. This evaluation <em>does not factor in</em> the historical memory and multi-agent orchestration capabilities provided by the <em>GBRAIN via MCP</em> (Model Context Protocol), which would significantly enhance the operational intelligence and context-awareness of the system in a production environment.
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ── 04 SECURE INQUIRY ──────────────────────────────────── -->
+    <section class="section-wrapper reveal" aria-labelledby="sec-inquiry">
+      <div class="section-header">
+        <span class="section-label" id="sec-inquiry">Secure Inquiry</span>
+        <div class="section-line" aria-hidden="true"></div>
+        <span class="section-num" aria-hidden="true">04</span>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-corner tl" aria-hidden="true"></div>
+        <div class="contact-corner tr" aria-hidden="true"></div>
+        <div class="contact-corner bl" aria-hidden="true"></div>
+        <div class="contact-corner br" aria-hidden="true"></div>
+
+        <h3>Deployment Inquiry</h3>
+        <a class="contact-email" href="mailto:dokorailabs@proton.me">dokorailabs@proton.me</a>
+
+        <!-- CTA BLOCK -->
+        <div class="cta-block">
+          <span class="cta-label">Ready to deploy?</span>
+          <a class="cta-btn" href="mailto:dokorailabs@proton.me?subject=Deployment%20Inquiry" aria-label="Request a deployment briefing via encrypted email">
+            Request Briefing <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="cta-btn cta-btn-ghost" href="mailto:dokorailabs@proton.me?subject=Technical%20Documentation%20Request" aria-label="Request technical documentation">
+            Technical Docs <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="contact-key">
+          <span class="contact-key-label">PGP KEY</span>
+          <div class="contact-key-val">KEY: 0x4F2A9B8C1D3E5F7A6B9C0D1E2F3A4B5C6D7E8F90</div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /#main-content -->
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <p>All operations validated through the VaultOfTartarus (V.O.T.) framework. Our causal registry ensures absolute consistency, if the data does not align with the V.O.T. integrity baseline, it is purged.</p>
+    <div class="footer-sig">
+      <div>DOKORAI LABS</div>
+      <div>V.O.T. FRAMEWORK</div>
+      <div class="footer-copy">&copy; 2026 DokorAI Labs. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS — modular, event-driven, no globals leaked
+  ════════════════════════════════════════════════════════════ -->
+  <script>
+  (() => {
+    'use strict';
+
+    /* ── 1. SCROLL REVEAL ─────────────────────────────────────── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+
+    /* ── 2. DELTA BAR ANIMATION ───────────────────────────────── */
+    function animateBars() {
+      document.querySelectorAll('#panel-sim .delta-bar').forEach(bar => {
+        // Reset first so re-entry re-triggers the CSS transition
+        bar.style.transition = 'none';
+        bar.style.width = '0%';
+        // Force reflow to flush the reset, then re-enable transition
+        void bar.offsetWidth;
+        bar.style.transition = '';
+        bar.style.width = (bar.dataset.width || '0') + '%';
+      });
+    }
+
+
+    /* ── 3. RADAR CHART ───────────────────────────────────────── */
+    let radarDrawn = false;
+
+    function drawRadar() {
+      const canvas = document.getElementById('radarCanvas');
+      if (!canvas) return;
+
+      // DPR-aware sizing for crisp rendering on Retina/HiDPI
+      const dpr    = window.devicePixelRatio || 1;
+      const cssW   = canvas.clientWidth  || 560;
+      const cssH   = canvas.clientHeight || 420;
+      canvas.width  = cssW * dpr;
+      canvas.height = cssH * dpr;
+
+      const ctx  = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      const W  = cssW, H = cssH;
+      const cx = W / 2, cy = H / 2 + 10;
+      const R  = Math.min(W, H) * 0.32;
+
+      const labels = ['Causal Density', 'Actionability', 'Comm. Efficiency', 'Risk Depth', 'Strategic Insight'];
+      const base   = [0.28, 0.30, 0.25, 0.30, 0.20];
+      const ft     = [0.88, 0.85, 0.90, 0.87, 0.92];
+      const n      = labels.length;
+      const step   = (Math.PI * 2) / n;
+      const start  = -Math.PI / 2;
+
+      ctx.clearRect(0, 0, W, H);
+
+      // Background
+      ctx.fillStyle = '#0a0a0a';
+      ctx.fillRect(0, 0, W, H);
+
+      // Grid rings + percentage labels
+      [0.25, 0.5, 0.75, 1.0].forEach((r, ri) => {
+        ctx.beginPath();
+        for (let i = 0; i < n; i++) {
+          const a = start + i * step;
+          const x = cx + Math.cos(a) * R * r;
+          const y = cy + Math.sin(a) * R * r;
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = ri === 3 ? '#27272a' : '#1a1a1d';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // Ring label
+        if (r < 1) {
+          ctx.fillStyle = '#3f3f46';
+          ctx.font = `400 9px 'JetBrains Mono', monospace`;
+          ctx.textAlign = 'left';
+          ctx.fillText(`${r * 100}%`, cx + 4, cy - R * r + 3);
+        }
+      });
+
+      // Axis spokes
+      for (let i = 0; i < n; i++) {
+        const a = start + i * step;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx + Math.cos(a) * R, cy + Math.sin(a) * R);
+        ctx.strokeStyle = '#27272a';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      // Draw a filled polygon shape
+      function drawShape(vals, strokeColor, fillColor) {
+        ctx.beginPath();
+        for (let i = 0; i < n; i++) {
+          const a = start + i * step;
+          const x = cx + Math.cos(a) * R * vals[i];
+          const y = cy + Math.sin(a) * R * vals[i];
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+        ctx.strokeStyle = strokeColor;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+
+      drawShape(base, 'rgba(161,161,170,0.5)', 'rgba(113,113,122,0.07)');
+      drawShape(ft,   '#3B82F6',               'rgba(59,130,246,0.13)');
+
+      // Nodes on fine-tuned shape
+      for (let i = 0; i < n; i++) {
+        const a = start + i * step;
+        const x = cx + Math.cos(a) * R * ft[i];
+        const y = cy + Math.sin(a) * R * ft[i];
+        // Glow
+        const grd = ctx.createRadialGradient(x, y, 0, x, y, 8);
+        grd.addColorStop(0, 'rgba(59,130,246,0.3)');
+        grd.addColorStop(1, 'rgba(59,130,246,0)');
+        ctx.beginPath();
+        ctx.arc(x, y, 8, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+        // Dot
+        ctx.beginPath();
+        ctx.arc(x, y, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#3B82F6';
+        ctx.fill();
+      }
+
+      // Axis labels
+      ctx.font = `700 10px 'JetBrains Mono', monospace`;
+      ctx.fillStyle = '#a1a1aa';
+      for (let i = 0; i < n; i++) {
+        const a    = start + i * step;
+        const dist = R + 30;
+        const lx   = cx + Math.cos(a) * dist;
+        const ly   = cy + Math.sin(a) * dist;
+
+        // Multi-word labels wrap to 2 lines
+        const words = labels[i].split(' ');
+        ctx.textAlign = lx < cx - 5 ? 'right' : lx > cx + 5 ? 'left' : 'center';
+        const lineH = 13;
+        const totalH = words.length * lineH;
+        words.forEach((word, wi) => {
+          ctx.fillText(word.toUpperCase(), lx, ly - totalH / 2 + wi * lineH + 5);
+        });
+      }
+
+      radarDrawn = true;
+    }
+
+
+    /* ── 4. TAB CONTROLLER ────────────────────────────────────── *
+     *
+     *  Implements the ARIA Authoring Practices Guide (APG)
+     *  "Tabs Pattern" with:
+     *   - aria-selected managed on buttons
+     *   - tabindex roving (only active tab is in tab order)
+     *   - Arrow key navigation (←/→ moves focus + activates)
+     *   - Enter/Space activate focused tab (redundant but explicit)
+     *   - Home/End jump to first/last tab
+     *
+     * ─────────────────────────────────────────────────────────── */
+    const tablist  = document.getElementById('bench-tablist');
+    const tabs     = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    const panels   = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+    // Panel-specific side effects
+    const sideEffects = {
+      'panel-sim'  : animateBars,
+      'panel-radar': () => { if (!radarDrawn) drawRadar(); },
+    };
+
+    function activateTab(tab, setFocus = true) {
+      // Deactivate all
+      tabs.forEach(t => {
+        t.setAttribute('aria-selected', 'false');
+        t.setAttribute('tabindex', '-1');
+      });
+      panels.forEach(p => p.classList.remove('active'));
+
+      // Activate selected
+      tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('tabindex', '0');
+      const panelId = tab.getAttribute('aria-controls');
+      const panel   = document.getElementById(panelId);
+      panel.classList.add('active');
+
+      if (setFocus) tab.focus();
+
+      // Run side effect if registered
+      if (sideEffects[panelId]) sideEffects[panelId]();
+    }
+
+    tabs.forEach((tab, idx) => {
+      // Click
+      tab.addEventListener('click', () => activateTab(tab, false));
+
+      // Keyboard
+      tab.addEventListener('keydown', (e) => {
+        let next = null;
+        if (e.key === 'ArrowRight') next = tabs[(idx + 1) % tabs.length];
+        if (e.key === 'ArrowLeft')  next = tabs[(idx - 1 + tabs.length) % tabs.length];
+        if (e.key === 'Home')       next = tabs[0];
+        if (e.key === 'End')        next = tabs[tabs.length - 1];
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateTab(tab); }
+        if (next) { e.preventDefault(); activateTab(next); }
+      });
+    });
+
+  })();
+  </script>
+
+</body>
+</html>
