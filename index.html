@@ -2,51 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- ═══════════════════════════════════════════════════════════
-       VIEWPORT — prevent iOS auto-zoom on input; explicit width
-  ════════════════════════════════════════════════════════════════ -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <!-- ═══════════════════════════════════════════════════════════
-       SEO
-  ════════════════════════════════════════════════════════════════ -->
-  <title>DokorAI Labs — Sovereign Intelligence. Engineered Accountability.</title>
-  <meta name="description" content="DokorAI Labs builds private, sovereign AI infrastructure for high-stakes institutional decision-making. Zero-trust architecture. No telemetry. No margin for error.">
+  <title>DokorAI Labs — Sovereign AI for High-Stakes Decisions</title>
+  <meta name="description" content="DokorAI Labs delivers private, sovereign LLM infrastructure for law, medicine, finance, and psychology. Zero-trust. No telemetry. Causal precision where error is not an option.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dokorailabs.com/">
 
-  <!-- ═══════════════════════════════════════════════════════════
-       OPEN GRAPH — LinkedIn / Slack / iMessage previews
-  ════════════════════════════════════════════════════════════════ -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://dokorailabs.com/">
-  <meta property="og:title"       content="DokorAI Labs — Sovereign Intelligence">
-  <meta property="og:description" content="Private SaaS for high-stakes decision making. Zero-trust LLM infrastructure for institutions that cannot afford a margin of error.">
-  <meta property="og:image"       content="https://dokorailabs.com/og-image.png">
+  <meta property="og:type"         content="website">
+  <meta property="og:url"          content="https://dokorailabs.com/">
+  <meta property="og:title"        content="DokorAI Labs — Sovereign AI for High-Stakes Decisions">
+  <meta property="og:description"  content="Private SaaS for law, medicine, finance & psychology. Zero-trust LLM infrastructure built for institutions where error is not a statistical variable — it is a choice.">
+  <meta property="og:image"        content="https://dokorailabs.com/og-image.png">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:site_name"   content="DokorAI Labs">
+  <meta property="og:site_name"    content="DokorAI Labs">
 
-  <!-- ═══════════════════════════════════════════════════════════
-       TWITTER / X CARD
-  ════════════════════════════════════════════════════════════════ -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:site"        content="@dokorailabs">
-  <meta name="twitter:title"       content="DokorAI Labs — Sovereign Intelligence">
-  <meta name="twitter:description" content="Private SaaS for high-stakes decision making. Zero-trust LLM infrastructure.">
+  <meta name="twitter:title"       content="DokorAI Labs — Sovereign AI for High-Stakes Decisions">
+  <meta name="twitter:description" content="Private LLM infrastructure for law, medicine, finance & psychology. Zero-trust. No telemetry.">
   <meta name="twitter:image"       content="https://dokorailabs.com/og-image.png">
 
-  <!-- ═══════════════════════════════════════════════════════════
-       PWA
-  ════════════════════════════════════════════════════════════════ -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#050505">
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
 
-  <!-- ═══════════════════════════════════════════════════════════
-       STRUCTURED DATA — Schema.org Organization + Website
-  ════════════════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,12 +37,8 @@
         "@id": "https://dokorailabs.com/#org",
         "name": "DokorAI Labs",
         "url": "https://dokorailabs.com/",
-        "description": "Private sovereign AI infrastructure for high-stakes institutional decision-making.",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "dokorailabs@proton.me",
-          "contactType": "Sales"
-        }
+        "description": "Private sovereign AI infrastructure for law, medicine, finance and psychology.",
+        "contactPoint": { "@type": "ContactPoint", "email": "dokorailabs@proton.me", "contactType": "Sales" }
       },
       {
         "@type": "WebSite",
@@ -74,1287 +51,1379 @@
   }
   </script>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       FONT
-  ════════════════════════════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ═══════════════════════════════════════════════════════════
-       DESIGN TOKENS
-    ════════════════════════════════════════════════════════════ */
+    /* ─────────────────────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────────────────────── */
     :root {
-      --bg:          #050505;
-      --surface:     #0a0a0a;
-      --surface-2:   #0d1117;
-      --border:      #27272a;
-      --border-dim:  #1a1a1d;
-      --text-main:   #e4e4e7;
-      --text-dim:    #71717a;
-      --text-mid:    #a1a1aa;
-      --accent:      #3B82F6;
-      --accent-dim:  rgba(59,130,246,0.08);
-      --red:         #f87171;
-      --green:       #4ade80;
-      --danger:      #ff3b5c;
-      --font:        'JetBrains Mono', monospace;
-      --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+      --bg:           #050505;
+      --surface:      #0a0a0a;
+      --surface-2:    #0d1117;
+      --surface-3:    #111318;
+      --border:       #27272a;
+      --border-dim:   #1a1a1d;
+      --text-main:    #e4e4e7;
+      --text-mid:     #a1a1aa;
+      --text-dim:     #52525b;
+      --accent:       #3b82f6;
+      --accent-hi:    #60a5fa;
+      --accent-dim:   rgba(59,130,246,0.07);
+      --accent-glow:  rgba(59,130,246,0.18);
+      --red:          #f87171;
+      --green:        #4ade80;
+      --danger:       #ef4444;
+      --mono:         'JetBrains Mono', monospace;
+      --sans:         'Inter', system-ui, sans-serif;
+      --ease:         cubic-bezier(0.16,1,0.3,1);
+      --ease-out:     cubic-bezier(0.0,0.0,0.2,1);
+      --max-w:        1080px;
     }
 
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
        RESET
-    ════════════════════════════════════════════════════════════ */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    ───────────────────────────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    img, svg { display:block; }
+    a { color: inherit; }
 
-    /* ═══════════════════════════════════════════════════════════
-       SCANLINE — fixed overlay, composited on GPU with will-change
-       On mobile we skip backdrop-filter entirely and use a solid
-       semi-transparent bg instead (see .status-bar media query)
-    ════════════════════════════════════════════════════════════ */
+    /* ─────────────────────────────────────────────────────────
+       SCANLINE — GPU-composited, never repaints
+    ───────────────────────────────────────────────────────── */
     body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      will-change: transform; /* promote to own layer, prevent repaint */
+      content:'';
+      position:fixed; inset:0;
+      pointer-events:none; z-index:9999;
+      will-change:transform;
       background: repeating-linear-gradient(
         to bottom,
-        transparent      0px,
-        transparent      2px,
-        rgba(0,0,0,0.05) 2px,
-        rgba(0,0,0,0.05) 4px
+        transparent 0px, transparent 2px,
+        rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px
       );
     }
 
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
        BODY
-    ════════════════════════════════════════════════════════════ */
+    ───────────────────────────────────────────────────────── */
     body {
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text-main);
-      font-family: var(--font);
-      font-size: 14px;
+      font-family: var(--sans);
+      font-size: 15px;
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ═══════════════════════════════════════════════════════════
-       SKIP LINK — keyboard accessibility
-    ════════════════════════════════════════════════════════════ */
+    /* ─────────────────────────────────────────────────────────
+       SKIP LINK
+    ───────────────────────────────────────────────────────── */
     .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 1rem;
-      background: var(--accent);
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.7rem;
-      font-family: var(--font);
-      letter-spacing: 0.08em;
-      z-index: 10000;
-      transition: top 0.15s;
+      position:absolute; top:-100%; left:1rem;
+      background:var(--accent); color:#fff; padding:.4rem .8rem;
+      font-family:var(--mono); font-size:.7rem; letter-spacing:.08em;
+      z-index:10000; transition:top .15s;
     }
-    .skip-link:focus { top: 0.5rem; }
+    .skip-link:focus { top:.5rem; }
 
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
        STATUS BAR
-       Mobile: no backdrop-filter (GPU/battery drain); solid bg
-    ════════════════════════════════════════════════════════════ */
+    ───────────────────────────────────────────────────────── */
     .status-bar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(5,5,5,0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      will-change: transform; /* own compositing layer */
-      border-bottom: 1px solid var(--border);
-      padding: 0.55rem 2.5rem;
+      position:sticky; top:0; z-index:200;
+      background: rgba(5,5,5,0.97);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      will-change: transform;
+      border-bottom: 1px solid var(--border-dim);
+      padding: .5rem 2rem;
+      display:flex; align-items:center; gap:1.5rem;
+      font-family:var(--mono); font-size:.62rem;
+      letter-spacing:.08em; color:var(--text-dim);
+      overflow-x:auto; scrollbar-width:none;
+    }
+    .status-bar::-webkit-scrollbar { display:none; }
+
+    .s-dot {
+      width:6px; height:6px; border-radius:50%;
+      background:var(--accent); box-shadow:0 0 7px var(--accent);
+      flex-shrink:0; animation:pulse-dot 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; box-shadow:0 0 7px var(--accent); }
+      50%      { opacity:.35; box-shadow:0 0 3px var(--accent); }
+    }
+    .s-live  { color:var(--accent); white-space:nowrap; }
+    .s-dead  { color:var(--danger); white-space:nowrap; }
+    .s-sep   { color:var(--border); flex-shrink:0; }
+    .s-label { white-space:nowrap; }
+
+    /* ─────────────────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────────────────── */
+    .nav {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 1.6rem 2rem;
       display: flex;
       align-items: center;
-      gap: 2rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      color: var(--text-dim);
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .status-bar::-webkit-scrollbar { display: none; }
-
-    @media (max-width: 680px) {
-      .status-bar {
-        /* Drop the blur entirely on mobile — no GPU compositing cost */
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        background: #050505;
-        gap: 1rem;
-        padding: 0.55rem 1.2rem;
-        font-size: 0.6rem;
-      }
-    }
-
-    .status-bar .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
-      flex-shrink: 0;
-      animation: pulse-dot 2.4s ease-in-out infinite;
-    }
-    .status-bar span { color: var(--text-dim); white-space: nowrap; }
-    .status-bar .s-label { color: var(--accent); }
-    .status-bar .sep { color: var(--border); }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--accent); }
-      50%       { opacity: 0.4; box-shadow: 0 0 3px var(--accent); }
-    }
-
-    /* ═══════════════════════════════════════════════════════════
-       HEADER
-    ════════════════════════════════════════════════════════════ */
-    header {
-      padding: 3.5rem 2.5rem 3rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
       justify-content: space-between;
-      align-items: flex-end;
       border-bottom: 1px solid var(--border-dim);
     }
 
-    /* ── LOGO + GLITCH ──────────────────────────────────────────
-       Old approach: steps(1) jumps caused 1-frame tearing on
-       120 Hz screens. New approach: keyframe easing with
-       opacity + translate only — GPU-composited, no layout.
-    ─────────────────────────────────────────────────────────── */
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: #fff;
-      position: relative;
-      cursor: default;
-      user-select: none;
+    .nav-logo {
+      display:flex; align-items:center; gap:1rem;
+      text-decoration:none;
     }
-    .logo::before,
-    .logo::after {
-      content: 'DOKORAI LABS';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      opacity: 0;
-      will-change: opacity, transform;
+    .nav-logo svg {
+      width:44px; height:auto;
+      flex-shrink:0;
     }
-    .logo::before {
-      color: var(--accent);
-      clip-path: polygon(0 25%, 100% 25%, 100% 48%, 0 48%);
-      animation: glitch-a 7s ease-in-out infinite;
+    .nav-wordmark {
+      font-family:var(--mono); font-size:.85rem;
+      font-weight:800; letter-spacing:-.02em; color:#fff;
+      line-height:1.1;
     }
-    .logo::after {
-      color: var(--danger);
-      clip-path: polygon(0 58%, 100% 58%, 100% 76%, 0 76%);
-      animation: glitch-b 7s ease-in-out infinite;
+    .nav-wordmark small {
+      display:block; font-size:.5rem;
+      letter-spacing:.18em; color:var(--text-dim);
+      font-weight:400; margin-top:.15rem;
     }
 
-    /* Smooth glitch: opacity only jumps fast; translate eases slightly */
-    @keyframes glitch-a {
-      0%, 93%, 100% { opacity: 0; transform: translateX(0); }
-      94%            { opacity: 1; transform: translateX(-3px); }
-      95%            { opacity: 0; transform: translateX(0); }
-      96%            { opacity: 0.8; transform: translateX(2px); }
-      97%            { opacity: 0; transform: translateX(0); }
+    .nav-links {
+      display:flex; align-items:center; gap:2rem;
+      list-style:none;
     }
-    @keyframes glitch-b {
-      0%, 93.5%, 100% { opacity: 0; transform: translateX(0); }
-      94.5%            { opacity: 1; transform: translateX(3px); }
-      95.5%            { opacity: 0; transform: translateX(0); }
+    .nav-links a {
+      font-family:var(--mono); font-size:.62rem;
+      letter-spacing:.14em; text-transform:uppercase;
+      color:var(--text-dim); text-decoration:none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color:var(--text-main); }
+
+    .nav-cta {
+      font-family:var(--mono); font-size:.62rem;
+      letter-spacing:.12em; text-transform:uppercase;
+      background:var(--accent); color:#fff;
+      border:none; padding:.5rem 1.2rem;
+      cursor:pointer; text-decoration:none;
+      transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity:.88; }
+
+    /* mobile nav toggle */
+    .nav-burger {
+      display:none; flex-direction:column; gap:5px;
+      background:none; border:none; cursor:pointer; padding:.2rem;
+    }
+    .nav-burger span {
+      display:block; width:22px; height:1.5px;
+      background:var(--text-mid); transition: transform .25s, opacity .25s;
     }
 
-    .header-meta {
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      text-align: right;
-      letter-spacing: 0.05em;
-      line-height: 1.8;
-    }
-
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
        HERO
-    ════════════════════════════════════════════════════════════ */
+    ───────────────────────────────────────────────────────── */
     .hero {
-      padding: 6rem 2.5rem 5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
+      max-width:var(--max-w); margin:0 auto;
+      padding: 7rem 2rem 6rem;
+      text-align:center; position:relative;
+      overflow:hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content:'';
+      position:absolute; inset:0;
       background-image:
         linear-gradient(var(--border-dim) 1px, transparent 1px),
         linear-gradient(90deg, var(--border-dim) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
-      opacity: 0.5;
-      pointer-events: none;
+      background-size:44px 44px;
+      mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 20%, transparent 78%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 20%, transparent 78%);
+      opacity:.45; pointer-events:none;
     }
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 800;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      position: relative;
-    }
-    .hero h1 .accent-word {
-      color: transparent;
-      -webkit-text-stroke: 1px var(--accent);
-    }
-    .hero-sub {
-      margin-top: 1.4rem;
-      font-size: 1rem;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      position: relative;
-    }
-    .hero-body {
-      margin: 2.5rem auto 0;
-      max-width: 680px;
-      font-size: 0.92rem;
-      color: var(--text-mid);
-      line-height: 1.9;
-      position: relative;
+    /* Blue ambient glow behind headline */
+    .hero::after {
+      content:'';
+      position:absolute; top:20%; left:50%;
+      transform:translateX(-50%);
+      width:600px; height:300px;
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+      pointer-events:none; z-index:0;
     }
 
-    /* ═══════════════════════════════════════════════════════════
+    .hero-eyebrow {
+      position:relative; z-index:1;
+      display:inline-flex; align-items:center; gap:.6rem;
+      font-family:var(--mono); font-size:.62rem;
+      letter-spacing:.2em; text-transform:uppercase;
+      color:var(--accent); margin-bottom:2rem;
+      border: 1px solid rgba(59,130,246,.2);
+      padding:.35rem .9rem; border-radius:2px;
+    }
+    .hero-eyebrow::before {
+      content:'';
+      width:5px; height:5px; border-radius:50%;
+      background:var(--accent); flex-shrink:0;
+      animation:pulse-dot 2.4s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      position:relative; z-index:1;
+      font-family:var(--mono);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight:800; line-height:1.06;
+      letter-spacing:-.03em; color:#fff;
+      text-transform:uppercase;
+      margin-bottom:1.8rem;
+    }
+    .hero h1 .outline {
+      color:transparent;
+      -webkit-text-stroke: 1.5px var(--accent);
+    }
+
+    .hero-sub {
+      position:relative; z-index:1;
+      max-width:620px; margin:0 auto 3rem;
+      font-size:1.05rem; color:var(--text-mid);
+      line-height:1.75; font-weight:300;
+    }
+
+    .hero-actions {
+      position:relative; z-index:1;
+      display:flex; align-items:center;
+      justify-content:center; gap:1rem; flex-wrap:wrap;
+      margin-bottom:4rem;
+    }
+
+    /* Proof bar below hero CTA */
+    .hero-proof {
+      position:relative; z-index:1;
+      display:flex; align-items:center;
+      justify-content:center; gap:2.5rem;
+      flex-wrap:wrap;
+    }
+    .proof-item {
+      display:flex; align-items:center; gap:.5rem;
+      font-family:var(--mono); font-size:.6rem;
+      letter-spacing:.12em; text-transform:uppercase;
+      color:var(--text-dim);
+    }
+    .proof-item::before {
+      content:'✓';
+      color:var(--accent); font-size:.65rem;
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       SHARED BUTTONS
+    ───────────────────────────────────────────────────────── */
+    .btn {
+      display:inline-flex; align-items:center; gap:.55rem;
+      font-family:var(--mono); font-size:.7rem;
+      font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+      text-decoration:none; border:1px solid transparent;
+      padding:.85rem 1.9rem; cursor:pointer;
+      transition: opacity .2s, background .2s, color .2s, border-color .2s;
+      outline:none; position:relative; overflow:hidden;
+      white-space:nowrap;
+    }
+    .btn:focus-visible { box-shadow:0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+    .btn .arr { transition:transform .2s var(--ease); }
+    .btn:hover .arr { transform:translateX(4px); }
+
+    .btn-primary {
+      background:var(--accent); color:#fff;
+      border-color:var(--accent);
+    }
+    .btn-primary:hover { opacity:.9; }
+
+    .btn-ghost {
+      background:transparent; color:var(--text-mid);
+      border-color:var(--border);
+    }
+    .btn-ghost:hover { color:var(--text-main); border-color:var(--text-mid); }
+
+    .btn-outline {
+      background:transparent; color:var(--accent);
+      border-color: rgba(59,130,246,.35);
+    }
+    .btn-outline:hover { background:var(--accent-dim); border-color:var(--accent); }
+
+    /* ─────────────────────────────────────────────────────────
        SECTION CHROME
-    ════════════════════════════════════════════════════════════ */
+    ───────────────────────────────────────────────────────── */
     .rule {
-      border: none;
-      border-top: 1px solid var(--border-dim);
-      max-width: 1000px;
-      margin: 0 auto;
+      border:none; border-top:1px solid var(--border-dim);
+      max-width:var(--max-w); margin:0 auto;
     }
-    .section-wrapper {
-      padding: 4.5rem 2.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      border-top: 1px solid var(--border-dim);
+    .section {
+      max-width:var(--max-w); margin:0 auto;
+      padding:5rem 2rem;
     }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
+    .section-hd {
+      display:flex; align-items:center; gap:1rem;
+      margin-bottom:3rem;
     }
-    .section-label {
-      font-size: 0.65rem;
-      color: var(--accent);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 700;
+    .section-tag {
+      font-family:var(--mono); font-size:.58rem;
+      letter-spacing:.22em; text-transform:uppercase;
+      color:var(--accent); font-weight:700; white-space:nowrap;
     }
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, var(--border), transparent);
+    .section-rule {
+      flex:1; height:1px;
+      background:linear-gradient(to right, var(--border), transparent);
     }
     .section-num {
-      font-size: 0.6rem;
-      color: var(--border);
-      letter-spacing: 0.1em;
+      font-family:var(--mono); font-size:.58rem;
+      color:var(--border); letter-spacing:.1em;
     }
 
-    /* ═══════════════════════════════════════════════════════════
-       TECH CORE — CARDS
-    ════════════════════════════════════════════════════════════ */
-    .tech-desc {
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      max-width: 700px;
-      margin-bottom: 3rem;
-      line-height: 1.8;
+    .section-intro {
+      max-width:640px;
+      font-size:.95rem; color:var(--text-mid); line-height:1.85;
+      margin-bottom:3rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border-dim);
+
+    /* ─────────────────────────────────────────────────────────
+       TECH CORE CARDS
+    ───────────────────────────────────────────────────────── */
+    .cards-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1px; background:var(--border-dim);
     }
     .card {
-      background: var(--surface);
-      padding: 2.2rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.25s var(--ease);
+      background:var(--surface); padding:2.2rem 2rem;
+      position:relative; overflow:hidden;
+      transition:background .25s var(--ease);
     }
-    .card:hover { background: var(--surface-2); }
+    .card:hover { background:var(--surface-2); }
     .card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(var(--border) 0.6px, transparent 0.6px);
-      background-size: 12px 12px;
-      opacity: 0.6;
-      pointer-events: none;
+      content:''; position:absolute; inset:0;
+      background-image:radial-gradient(var(--border) .5px, transparent .5px);
+      background-size:12px 12px; opacity:.5; pointer-events:none;
     }
     .card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.35s var(--ease);
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:1px;
+      background:var(--accent);
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .35s var(--ease);
     }
-    .card:hover::after { transform: scaleX(1); }
-    .card-corner {
-      position: absolute;
-      width: 10px; height: 10px;
-      border-color: var(--accent);
-      border-style: solid;
-      opacity: 0.5;
-      transition: opacity 0.25s;
+    .card:hover::after { transform:scaleX(1); }
+    .card-brk {
+      position:absolute; width:10px; height:10px;
+      border:1px solid var(--accent); opacity:.35;
+      transition:opacity .25s;
     }
-    .card:hover .card-corner { opacity: 1; }
-    .card-corner.tl { top: 8px; left: 8px;   border-width: 1px 0 0 1px; }
-    .card-corner.tr { top: 8px; right: 8px;  border-width: 1px 1px 0 0; }
-    .card-corner.bl { bottom: 8px; left: 8px;  border-width: 0 0 1px 1px; }
-    .card-corner.br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
-    .card-tag {
-      font-size: 0.58rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-      position: relative;
+    .card:hover .card-brk { opacity:1; }
+    .card-brk.tl { top:8px; left:8px; border-right:none; border-bottom:none; }
+    .card-brk.tr { top:8px; right:8px; border-left:none; border-bottom:none; }
+    .card-brk.bl { bottom:8px; left:8px; border-right:none; border-top:none; }
+    .card-brk.br { bottom:8px; right:8px; border-left:none; border-top:none; }
+    .card-mod {
+      font-family:var(--mono); font-size:.55rem;
+      letter-spacing:.18em; color:var(--text-dim);
+      margin-bottom:.9rem; position:relative;
     }
     .card h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.8rem;
-      position: relative;
+      font-family:var(--mono); font-size:.88rem;
+      font-weight:700; text-transform:uppercase;
+      letter-spacing:.06em; color:#fff;
+      margin-bottom:.7rem; position:relative;
     }
     .card p {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      line-height: 1.75;
-      position: relative;
+      font-size:.8rem; color:var(--text-dim);
+      line-height:1.75; position:relative;
     }
 
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
+       VERTICALS / USE CASES
+    ───────────────────────────────────────────────────────── */
+    .verticals-grid {
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:1.5rem;
+    }
+    .vertical {
+      border:1px solid var(--border-dim);
+      background:var(--surface); padding:2.5rem;
+      position:relative; overflow:hidden;
+      transition:border-color .25s, background .25s;
+    }
+    .vertical:hover {
+      border-color:var(--border);
+      background:var(--surface-2);
+    }
+    .vertical::before {
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:2px;
+      background:linear-gradient(to right, var(--v-color,var(--accent)), transparent);
+    }
+
+    .vertical.law      { --v-color:#818cf8; }
+    .vertical.medical  { --v-color:#34d399; }
+    .vertical.finance  { --v-color:#3b82f6; }
+    .vertical.psych    { --v-color:#f472b6; }
+
+    .v-icon {
+      width:40px; height:40px; margin-bottom:1.4rem;
+      border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      font-family:var(--mono); font-size:.7rem;
+      color:var(--v-color,var(--accent));
+    }
+    .v-status {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-family:var(--mono); font-size:.55rem;
+      letter-spacing:.15em; text-transform:uppercase;
+      margin-bottom:1rem;
+    }
+    .v-status-dot {
+      width:5px; height:5px; border-radius:50%;
+      background:var(--v-color,var(--accent));
+    }
+    .v-status.soon .v-status-dot { background:var(--text-dim); }
+    .v-status.soon { color:var(--text-dim); }
+    .v-status.live { color:var(--v-color,var(--accent)); }
+
+    .vertical h3 {
+      font-family:var(--mono); font-size:.95rem;
+      font-weight:700; text-transform:uppercase;
+      letter-spacing:.06em; color:#fff;
+      margin-bottom:.7rem;
+    }
+    .vertical p {
+      font-size:.82rem; color:var(--text-mid);
+      line-height:1.8; margin-bottom:1.4rem;
+    }
+    .v-tags {
+      display:flex; gap:.5rem; flex-wrap:wrap;
+    }
+    .v-tag {
+      font-family:var(--mono); font-size:.55rem;
+      letter-spacing:.1em; text-transform:uppercase;
+      padding:.2rem .6rem;
+      border:1px solid var(--border);
+      color:var(--text-dim);
+    }
+
+    /* ─────────────────────────────────────────────────────────
        GOVERNANCE
-    ════════════════════════════════════════════════════════════ */
-    .gov-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border-dim);
+    ───────────────────────────────────────────────────────── */
+    .gov-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:1px; background:var(--border-dim);
     }
     .gov-box {
-      background: var(--surface);
-      padding: 2.5rem 2rem;
-      position: relative;
-      border-left: 2px solid transparent;
-      transition: background 0.25s;
+      background:var(--surface); padding:2.5rem 2rem;
+      border-left:2px solid transparent;
+      transition:background .25s;
     }
-    .gov-box.primary   { border-color: var(--accent); }
-    .gov-box.secondary { border-color: var(--text-dim); }
-    .gov-box:hover     { background: var(--surface-2); }
+    .gov-box.primary   { border-color:var(--accent); }
+    .gov-box.secondary { border-color:var(--text-dim); }
+    .gov-box:hover     { background:var(--surface-2); }
     .gov-box h4 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.7rem;
+      font-family:var(--mono); font-size:.78rem;
+      font-weight:700; text-transform:uppercase;
+      letter-spacing:.1em; color:#fff; margin-bottom:.7rem;
     }
     .gov-box p {
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      line-height: 1.75;
+      font-size:.8rem; color:var(--text-dim); line-height:1.75;
     }
 
-    /* ═══════════════════════════════════════════════════════════
-       BENCHMARK — TABS (full ARIA tab pattern)
-    ════════════════════════════════════════════════════════════ */
+    /* ─────────────────────────────────────────────────────────
+       BENCHMARK — TABS
+    ───────────────────────────────────────────────────────── */
     .bench-tabs {
-      display: flex;
-      gap: 0;
-      margin-bottom: 2.5rem;
-      border-bottom: 1px solid var(--border-dim);
-      overflow-x: auto;
-      scrollbar-width: none;
+      display:flex; border-bottom:1px solid var(--border-dim);
+      margin-bottom:2.5rem; overflow-x:auto; scrollbar-width:none;
     }
-    .bench-tabs::-webkit-scrollbar { display: none; }
-
+    .bench-tabs::-webkit-scrollbar { display:none; }
     .bench-tab {
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      padding: 0.7rem 1.4rem;
-      font-family: var(--font);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: var(--text-dim);
-      cursor: pointer;
-      text-transform: uppercase;
-      white-space: nowrap;
-      transition: color 0.2s, border-color 0.2s;
-      margin-bottom: -1px;
-      outline: none;
-      position: relative;
+      background:none; border:none;
+      border-bottom:2px solid transparent;
+      padding:.7rem 1.3rem; font-family:var(--mono);
+      font-size:.6rem; letter-spacing:.15em;
+      text-transform:uppercase; color:var(--text-dim);
+      cursor:pointer; white-space:nowrap;
+      transition:color .2s, border-color .2s;
+      margin-bottom:-1px; outline:none;
     }
-    .bench-tab:hover { color: var(--text-mid); }
-    .bench-tab[aria-selected="true"] {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
+    .bench-tab:hover { color:var(--text-mid); }
+    .bench-tab[aria-selected="true"] { color:var(--accent); border-bottom-color:var(--accent); }
+    .bench-tab:focus-visible {
+      outline:1px solid var(--accent); outline-offset:-2px;
     }
-    /* Visible focus ring for keyboard users */
-    .bench-tab:focus-visible::after {
-      content: '';
-      position: absolute;
-      inset: 2px;
-      border: 1px solid var(--accent);
-      border-radius: 2px;
-      pointer-events: none;
-    }
+    .bench-panel { display:none; }
+    .bench-panel.active { display:block; }
 
-    .bench-panel { display: none; }
-    .bench-panel.active { display: block; }
-
-    /* ═══════════════════════════════════════════════════════════
-       BENCHMARK — COMPARISON TABLE
-    ════════════════════════════════════════════════════════════ */
-    .bench-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.75rem;
-    }
-    .bench-table thead tr { border-bottom: 1px solid var(--border); }
+    /* Comparison table */
+    .bench-table { width:100%; border-collapse:collapse; font-size:.78rem; }
+    .bench-table thead tr { border-bottom:1px solid var(--border); }
     .bench-table th {
-      padding: 0.7rem 1rem;
-      text-align: left;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      color: var(--text-dim);
-      font-weight: 400;
-      text-transform: uppercase;
+      padding:.65rem 1rem; text-align:left;
+      font-family:var(--mono); font-size:.58rem;
+      letter-spacing:.15em; color:var(--text-dim);
+      font-weight:400; text-transform:uppercase;
     }
-    .bench-table th:first-child { color: var(--accent); }
+    .bench-table th:first-child { color:var(--accent); }
     .bench-table td {
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid var(--border-dim);
-      color: var(--text-mid);
-      vertical-align: middle;
+      padding:.8rem 1rem; border-bottom:1px solid var(--border-dim);
+      color:var(--text-mid); vertical-align:middle;
     }
-    .bench-table tr:last-child td { border-bottom: none; }
-    .bench-table tr:hover td { background: rgba(255,255,255,0.015); }
+    .bench-table tr:last-child td { border-bottom:none; }
+    .bench-table tbody tr:hover td { background:rgba(255,255,255,.015); }
     .bench-table td:first-child {
-      color: var(--text-main);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      font-size: 0.7rem;
+      font-family:var(--mono); font-weight:700;
+      font-size:.68rem; letter-spacing:.04em; color:var(--text-main);
     }
-    .bench-table td.base-val { color: var(--text-dim); }
-    .bench-table td.ft-val   { color: var(--green); }
-
+    .bench-table td.base-val { color:var(--text-dim); }
+    .bench-table td.ft-val   { color:var(--green); }
     .badge {
-      display: inline-block;
-      padding: 0.15rem 0.5rem;
-      font-size: 0.58rem;
-      letter-spacing: 0.1em;
-      border-radius: 2px;
-      text-transform: uppercase;
+      display:inline-block; padding:.15rem .5rem;
+      font-family:var(--mono); font-size:.55rem;
+      letter-spacing:.1em; border-radius:2px; text-transform:uppercase;
     }
-    .badge-base { background: rgba(113,113,122,0.12); color: var(--text-dim); }
-    .badge-ft   { background: rgba(74,222,128,0.1);  color: var(--green); }
-
+    .badge-base { background:rgba(113,113,122,.12); color:var(--text-dim); }
+    .badge-ft   { background:rgba(74,222,128,.1);  color:var(--green); }
     .takeaway {
-      border-left: 2px solid var(--accent);
-      padding: 1.2rem 1.4rem;
-      background: var(--accent-dim);
-      margin-top: 2rem;
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      line-height: 1.8;
+      border-left:2px solid var(--accent);
+      padding:1.1rem 1.4rem; background:var(--accent-dim);
+      margin-top:2rem; font-size:.8rem;
+      color:var(--text-mid); line-height:1.85;
     }
-    .takeaway strong { color: var(--text-main); }
+    .takeaway strong { color:var(--text-main); }
 
-    /* ═══════════════════════════════════════════════════════════
-       BENCHMARK — SIMULATION SCORECARD
-    ════════════════════════════════════════════════════════════ */
+    /* Sim scorecard */
     .sim-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border-dim);
-      margin-bottom: 2rem;
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1px; background:var(--border-dim);
     }
-    .sim-cell {
-      background: var(--surface);
-      padding: 1.6rem 1.4rem;
-    }
-    .sim-cell-label {
-      font-size: 0.58rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
+    .sim-cell { background:var(--surface); padding:1.5rem 1.3rem; }
+    .sim-label {
+      font-family:var(--mono); font-size:.55rem;
+      letter-spacing:.15em; text-transform:uppercase;
+      color:var(--text-dim); margin-bottom:.8rem;
     }
     .sim-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.4rem;
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:.35rem;
     }
-    .sim-key { font-size: 0.65rem; color: var(--text-dim); }
-    .sim-val { font-size: 0.72rem; font-weight: 700; }
-    .sim-val.neutral { color: var(--text-mid); }
-    .sim-val.neg     { color: var(--red); }
-    .sim-val.pos     { color: var(--green); }
+    .sim-key { font-size:.65rem; color:var(--text-dim); }
+    .sim-val { font-family:var(--mono); font-size:.72rem; font-weight:700; }
+    .sim-val.n  { color:var(--text-mid); }
+    .sim-val.ng { color:var(--red); }
+    .sim-val.ps { color:var(--green); }
+    .bar-wrap { margin-top:.55rem; height:3px; background:var(--border-dim); border-radius:2px; overflow:hidden; }
+    .bar { height:100%; width:0; border-radius:2px; transition:width 1.1s var(--ease); }
+    .bar.ng { background:var(--red); }
+    .bar.ps { background:var(--green); }
+    .sim-note { font-size:.58rem; margin-top:.45rem; }
 
-    .delta-bar-wrap {
-      margin-top: 0.6rem;
-      height: 3px;
-      background: var(--border-dim);
-      border-radius: 2px;
-      overflow: hidden;
+    /* Terminal block */
+    .terminal {
+      background:var(--surface-2); border:1px solid var(--border-dim);
+      border-left:2px solid var(--border);
+      padding:1.8rem 2rem; font-family:var(--mono);
+      font-size:.7rem; color:var(--text-dim); line-height:1.9;
+      position:relative;
     }
-    .delta-bar {
-      height: 100%;
-      border-radius: 2px;
-      width: 0;
-      transition: width 1.2s var(--ease);
+    .terminal::before {
+      content:'> METHODOLOGY_DISCLAIMER';
+      display:block; font-size:.58rem; letter-spacing:.15em;
+      margin-bottom:1rem; opacity:.5;
     }
-    .delta-bar.neg { background: var(--red); }
-    .delta-bar.pos { background: var(--green); }
+    .terminal em { font-style:normal; color:var(--accent); }
 
-    /* ═══════════════════════════════════════════════════════════
-       BENCHMARK — METHODOLOGY TERMINAL
-    ════════════════════════════════════════════════════════════ */
-    .terminal-block {
-      background: var(--surface-2);
-      border: 1px solid var(--border-dim);
-      border-left: 2px solid var(--border);
-      padding: 1.8rem 2rem;
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      line-height: 1.9;
-      position: relative;
+    /* ─────────────────────────────────────────────────────────
+       CONVERSION BLOCK (between benchmark and contact)
+    ───────────────────────────────────────────────────────── */
+    .conversion {
+      border:1px solid var(--border);
+      background: linear-gradient(135deg, var(--surface-2) 0%, var(--surface-3) 100%);
+      padding:3.5rem; position:relative; overflow:hidden;
     }
-    .terminal-block::before {
-      content: '> METHODOLOGY_DISCLAIMER';
-      display: block;
-      font-size: 0.6rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-      opacity: 0.6;
+    .conversion::before {
+      content:'';
+      position:absolute; top:-60px; right:-60px;
+      width:300px; height:300px; border-radius:50%;
+      background:var(--accent-glow); filter:blur(60px);
+      pointer-events:none;
     }
-    .terminal-block em {
-      font-style: normal;
-      color: var(--accent);
+    .conv-inner {
+      position:relative; z-index:1;
+      display:flex; align-items:center;
+      justify-content:space-between; gap:2rem; flex-wrap:wrap;
+    }
+    .conv-copy h2 {
+      font-family:var(--mono); font-size:1.4rem;
+      font-weight:800; text-transform:uppercase;
+      letter-spacing:-.02em; color:#fff;
+      margin-bottom:.7rem; line-height:1.15;
+    }
+    .conv-copy p {
+      font-size:.88rem; color:var(--text-mid);
+      line-height:1.75; max-width:440px;
+    }
+    .conv-actions {
+      display:flex; gap:1rem; flex-wrap:wrap; flex-shrink:0;
     }
 
-    /* ═══════════════════════════════════════════════════════════
-       CONTACT CARD + CTA
-    ════════════════════════════════════════════════════════════ */
+    /* ─────────────────────────────────────────────────────────
+       SECURE INQUIRY / CONTACT
+    ───────────────────────────────────────────────────────── */
     .contact-card {
-      border: 1px solid var(--border-dim);
-      padding: 3rem;
-      margin-top: 2rem;
-      position: relative;
-      background: var(--surface);
-      overflow: hidden;
+      border:1px solid var(--border-dim);
+      padding:3rem; background:var(--surface);
+      position:relative; overflow:hidden;
     }
     .contact-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 60%);
-      pointer-events: none;
+      content:'';
+      position:absolute; inset:0;
+      background:linear-gradient(135deg, var(--accent-dim) 0%, transparent 55%);
+      pointer-events:none;
     }
+    .c-corner {
+      position:absolute; width:12px; height:12px;
+      border:1px solid var(--accent); opacity:.35;
+    }
+    .c-corner.tl { top:10px; left:10px; border-right:none; border-bottom:none; }
+    .c-corner.tr { top:10px; right:10px; border-left:none; border-bottom:none; }
+    .c-corner.bl { bottom:10px; left:10px; border-right:none; border-top:none; }
+    .c-corner.br { bottom:10px; right:10px; border-left:none; border-top:none; }
+
     .contact-card h3 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      position: relative;
+      font-family:var(--mono); font-size:.88rem;
+      font-weight:700; text-transform:uppercase;
+      letter-spacing:.1em; color:#fff;
+      margin-bottom:.5rem; position:relative;
+    }
+    .contact-tagline {
+      font-size:.82rem; color:var(--text-mid);
+      margin-bottom:1.8rem; position:relative;
     }
     .contact-email {
-      font-size: 1rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      position: relative;
-      display: inline-block;
-      transition: color 0.2s;
+      font-family:var(--mono); font-size:1rem;
+      color:var(--accent); text-decoration:none;
+      position:relative; display:inline-block;
+      transition:color .2s;
     }
-    .contact-email:hover,
-    .contact-email:focus-visible { color: #fff; outline: none; text-decoration: underline; }
+    .contact-email:hover { color:#fff; }
+    .contact-email:focus-visible { outline:1px solid var(--accent); outline-offset:3px; }
 
-    /* ── CTA BLOCK ────────────────────────────────────────────── */
-    .cta-block {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.2rem;
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-dim);
-      position: relative;
+    .contact-cta {
+      display:flex; align-items:center; gap:1rem;
+      margin-top:2rem; padding-top:2rem;
+      border-top:1px solid var(--border-dim);
+      position:relative; flex-wrap:wrap;
     }
-    .cta-label {
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      flex: 0 0 auto;
+    .contact-cta-label {
+      font-family:var(--mono); font-size:.58rem;
+      letter-spacing:.15em; text-transform:uppercase;
+      color:var(--text-dim);
     }
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-family: var(--font);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.85rem 1.8rem;
-      border: 1px solid var(--accent);
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
-      flex: 0 0 auto;
-      outline: none;
-    }
-    .cta-btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: #fff;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .cta-btn:hover::before,
-    .cta-btn:focus-visible::before { opacity: 0.1; }
-    .cta-btn:focus-visible { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
-    .cta-btn .arrow { font-size: 0.9rem; transition: transform 0.2s var(--ease); }
-    .cta-btn:hover .arrow { transform: translateX(3px); }
-
-    .cta-btn-ghost {
-      background: transparent;
-      color: var(--text-mid);
-      border-color: var(--border);
-    }
-    .cta-btn-ghost:hover { color: var(--text-main); border-color: var(--text-mid); }
 
     .contact-key {
-      margin-top: 2rem;
-      padding-top: 1.4rem;
-      border-top: 1px solid var(--border-dim);
-      position: relative;
+      margin-top:2rem; padding-top:1.4rem;
+      border-top:1px solid var(--border-dim);
+      position:relative;
     }
-    .contact-key-label {
-      font-size: 0.58rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      margin-bottom: 0.5rem;
-      display: block;
+    .key-label {
+      font-family:var(--mono); font-size:.55rem;
+      letter-spacing:.15em; color:var(--text-dim);
+      margin-bottom:.4rem; display:block;
     }
-    .contact-key-val {
-      font-size: 0.7rem;
-      color: var(--text-mid);
-      word-break: break-all;
-      line-height: 1.6;
+    .key-val {
+      font-family:var(--mono); font-size:.68rem;
+      color:var(--text-mid); word-break:break-all; line-height:1.6;
     }
 
-    .contact-corner {
-      position: absolute;
-      width: 14px; height: 14px;
-      border-color: var(--accent);
-      border-style: solid;
-      opacity: 0.4;
-    }
-    .contact-corner.tl { top: 10px; left: 10px;   border-width: 1px 0 0 1px; }
-    .contact-corner.tr { top: 10px; right: 10px;  border-width: 1px 1px 0 0; }
-    .contact-corner.bl { bottom: 10px; left: 10px;  border-width: 0 0 1px 1px; }
-    .contact-corner.br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
-
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
        FOOTER
-    ════════════════════════════════════════════════════════════ */
-    footer {
-      border-top: 1px solid var(--border-dim);
-      padding: 2.5rem 2.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
+    ───────────────────────────────────────────────────────── */
+    .footer-wrap {
+      border-top:1px solid var(--border-dim);
+      max-width:var(--max-w); margin:0 auto;
+      padding:2.5rem 2rem;
+      display:grid; grid-template-columns:1fr auto;
+      gap:2rem; align-items:start;
     }
-    footer p {
-      font-size: 0.68rem;
-      color: var(--text-dim);
-      max-width: 600px;
-      line-height: 1.8;
-      letter-spacing: 0.02em;
-    }
-    .footer-sig {
-      font-size: 0.6rem;
-      color: var(--border);
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-      line-height: 1.8;
-      text-align: right;
+    .footer-left p {
+      font-size:.72rem; color:var(--text-dim);
+      line-height:1.8; max-width:520px;
     }
     .footer-copy {
-      font-size: 0.6rem;
-      color: var(--border);
-      letter-spacing: 0.05em;
-      margin-top: 0.4rem;
+      margin-top:.8rem;
+      font-family:var(--mono); font-size:.6rem;
+      color:var(--border); letter-spacing:.05em;
     }
+    .footer-right {
+      text-align:right;
+      font-family:var(--mono); font-size:.6rem;
+      color:var(--border); letter-spacing:.1em;
+      line-height:2;
+    }
+    .footer-nav {
+      display:flex; gap:1.5rem; flex-wrap:wrap;
+      margin-bottom:1rem;
+    }
+    .footer-nav a {
+      font-family:var(--mono); font-size:.58rem;
+      letter-spacing:.1em; text-transform:uppercase;
+      color:var(--text-dim); text-decoration:none;
+      transition:color .2s;
+    }
+    .footer-nav a:hover { color:var(--text-mid); }
 
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
        SCROLL REVEAL
-    ════════════════════════════════════════════════════════════ */
+    ───────────────────────────────────────────────────────── */
     .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+      opacity:0; transform:translateY(14px);
+      transition:opacity .55s var(--ease), transform .55s var(--ease);
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.visible { opacity:1; transform:none; }
 
-    /* ═══════════════════════════════════════════════════════════
-       RESPONSIVE OVERRIDES
-    ════════════════════════════════════════════════════════════ */
-    @media (max-width: 680px) {
-      body { font-size: 13px; }
-      header, .hero, .section-wrapper, footer { padding-left: 1.2rem; padding-right: 1.2rem; }
-      .grid          { grid-template-columns: 1fr; }
-      .gov-container { grid-template-columns: 1fr; }
-      .sim-grid      { grid-template-columns: 1fr; }
-      footer         { flex-direction: column; }
-      .footer-sig    { text-align: left; }
-      .hero h1       { font-size: 1.9rem; }
-      .cta-block     { flex-direction: column; align-items: flex-start; }
-      .cta-btn       { width: 100%; justify-content: center; }
+    /* ─────────────────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────────────────── */
+    @media(max-width:768px) {
+      .nav-links, .nav-cta { display:none; }
+      .nav-burger { display:flex; }
+      .nav-links.open {
+        display:flex; flex-direction:column;
+        position:fixed; inset:0; top:57px;
+        background:var(--bg); z-index:150;
+        padding:2rem; gap:1.5rem; align-items:flex-start;
+      }
+      .nav-links.open .nav-cta-wrap { display:block; margin-top:1rem; }
+      .cards-grid    { grid-template-columns:1fr; }
+      .gov-grid      { grid-template-columns:1fr; }
+      .verticals-grid{ grid-template-columns:1fr; }
+      .sim-grid      { grid-template-columns:1fr 1fr; }
+      .conv-inner    { flex-direction:column; }
+      .conv-actions  { flex-direction:column; width:100%; }
+      .conv-actions .btn { width:100%; justify-content:center; }
+      .contact-cta   { flex-direction:column; align-items:flex-start; }
+      .contact-cta .btn { width:100%; justify-content:center; }
+      .footer-wrap   { grid-template-columns:1fr; }
+      .footer-right  { text-align:left; }
+      .hero          { padding:4.5rem 1.5rem 4rem; }
+      .section       { padding:3.5rem 1.5rem; }
+      .conversion    { padding:2.5rem 1.5rem; }
+    }
+    @media(max-width:480px) {
+      .sim-grid { grid-template-columns:1fr; }
+      .status-bar { backdrop-filter:none; -webkit-backdrop-filter:none; background:#050505; }
     }
 
-    /* ═══════════════════════════════════════════════════════════
+    /* ─────────────────────────────────────────────────────────
        REDUCED MOTION
-    ════════════════════════════════════════════════════════════ */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-      .reveal { opacity: 1 !important; transform: none !important; }
-      .delta-bar { transition: none !important; }
+    ───────────────────────────────────────────────────────── */
+    @media(prefers-reduced-motion:reduce) {
+      *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+      .reveal { opacity:1 !important; transform:none !important; }
+      .bar { transition:none !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Skip nav for keyboard/screen-reader users -->
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ── STATUS BAR ─────────────────────────────────────────── -->
-  <div class="status-bar" role="status" aria-label="System status">
-    <div class="dot" aria-hidden="true"></div>
-    <span class="s-label">SYS_STATUS</span>
-    <span class="sep" aria-hidden="true">//</span>
-    <span>VOT_INTEGRITY: <span class="s-label">VERIFIED</span></span>
-    <span class="sep" aria-hidden="true">//</span>
-    <span>TELEMETRY: <span style="color:var(--danger)">DISABLED</span></span>
-    <span class="sep" aria-hidden="true">//</span>
-    <span>AIR_GAP: <span class="s-label">ACTIVE</span></span>
+<!-- ═══════════ STATUS BAR ═══════════ -->
+<div class="status-bar" role="status" aria-label="System status">
+  <div class="s-dot" aria-hidden="true"></div>
+  <span class="s-label">SYS_STATUS</span>
+  <span class="s-sep" aria-hidden="true">//</span>
+  <span class="s-label">VOT_INTEGRITY: <span class="s-live">VERIFIED</span></span>
+  <span class="s-sep" aria-hidden="true">//</span>
+  <span class="s-label">TELEMETRY: <span class="s-dead">DISABLED</span></span>
+  <span class="s-sep" aria-hidden="true">//</span>
+  <span class="s-label">AIR_GAP: <span class="s-live">ACTIVE</span></span>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="DokorAI Labs home">
+    <!-- Inline SVG logo — optimised, Inkscape metadata stripped -->
+    <svg viewBox="10 78 180 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <g transform="matrix(1.1296129,0,0,1.4341086,-11.624758,-2.7713579)">
+        <path fill="#ffffff" d="m 33.516056,82.72316 v 48.20288 l 48.20288,-24.60355 z"/>
+        <path fill="#ffffff" d="m 109.83727,130.92604 h 48.20288 L 133.4366,82.723162 Z"/>
+        <rect fill="#3b82f6" width="14.310227" height="48.202873" x="87.869827" y="83.099739"/>
+        <rect fill="#ffffff" width="7.5316992" height="48.202873" x="165.44633" y="82.848679"/>
+      </g>
+    </svg>
+    <div class="nav-wordmark">
+      DOKORAI LABS
+      <small>Sovereign Intelligence</small>
+    </div>
+  </a>
+
+  <ul class="nav-links" role="list" id="nav-links">
+    <li><a href="#tech">Infrastructure</a></li>
+    <li><a href="#verticals">Verticals</a></li>
+    <li><a href="#benchmark">Benchmark</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li class="nav-cta-wrap"><a href="mailto:dokorailabs@proton.me?subject=Deployment%20Inquiry" class="nav-cta">Request Access</a></li>
+  </ul>
+
+  <button class="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links" id="nav-burger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main id="main">
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-eyebrow">Private SaaS Infrastructure</div>
+  <h1 id="hero-h1">
+    Sovereign <span class="outline">Intelligence.</span><br>
+    Engineered Accountability.
+  </h1>
+  <p class="hero-sub">
+    We build private LLM infrastructure for environments where a wrong answer carries real consequences — law, medicine, finance, and psychology. Zero telemetry. Zero drift. Causal precision by design.
+  </p>
+  <div class="hero-actions">
+    <a href="mailto:dokorailabs@proton.me?subject=Deployment%20Inquiry" class="btn btn-primary">
+      Request Deployment Briefing <span class="arr" aria-hidden="true">→</span>
+    </a>
+    <a href="#benchmark" class="btn btn-ghost">
+      View Benchmark <span class="arr" aria-hidden="true">↓</span>
+    </a>
+  </div>
+  <div class="hero-proof" role="list">
+    <div class="proof-item" role="listitem">Air-gapped architecture</div>
+    <div class="proof-item" role="listitem">Zero external telemetry</div>
+    <div class="proof-item" role="listitem">Custom fine-tuned LLMs</div>
+    <div class="proof-item" role="listitem">VOT integrity framework</div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ 01 TECHNICAL CORE ═══════════ -->
+<section class="section reveal" id="tech" aria-labelledby="tech-hd">
+  <div class="section-hd">
+    <span class="section-tag" id="tech-hd">Technical Core</span>
+    <div class="section-rule" aria-hidden="true"></div>
+    <span class="section-num" aria-hidden="true">01</span>
+  </div>
+  <p class="section-intro">
+    Proprietary stack built for zero-trust environments. Our core integrates an optimised, locally-trained LLM with a hybrid MCP memory layer, enabling real-time causal reasoning without external telemetry or data leakage.
+  </p>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-brk tl" aria-hidden="true"></div><div class="card-brk tr" aria-hidden="true"></div>
+      <div class="card-brk bl" aria-hidden="true"></div><div class="card-brk br" aria-hidden="true"></div>
+      <div class="card-mod">MODULE_01</div>
+      <h3>Core</h3>
+      <p>Private LLM with open weights and domain-specific fine-tuning. Full local inference — no API calls, no data leaves the perimeter.</p>
+    </div>
+    <div class="card">
+      <div class="card-brk tl" aria-hidden="true"></div><div class="card-brk tr" aria-hidden="true"></div>
+      <div class="card-brk bl" aria-hidden="true"></div><div class="card-brk br" aria-hidden="true"></div>
+      <div class="card-mod">MODULE_02</div>
+      <h3>Memory</h3>
+      <p>Hybrid MCP layer with vectorised knowledge graphs. Immutable audit trail. Persistent context across sessions without cloud dependency.</p>
+    </div>
+    <div class="card">
+      <div class="card-brk tl" aria-hidden="true"></div><div class="card-brk tr" aria-hidden="true"></div>
+      <div class="card-brk bl" aria-hidden="true"></div><div class="card-brk br" aria-hidden="true"></div>
+      <div class="card-mod">MODULE_03</div>
+      <h3>Control</h3>
+      <p>Zero-leak architecture with air-gapped reasoning logic. VOT integrity baseline purges any output failing causal consistency checks.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ 02 VERTICALS ═══════════ -->
+<section class="section reveal" id="verticals" aria-labelledby="vert-hd">
+  <div class="section-hd">
+    <span class="section-tag" id="vert-hd">Precision Environments</span>
+    <div class="section-rule" aria-hidden="true"></div>
+    <span class="section-num" aria-hidden="true">02</span>
+  </div>
+  <p class="section-intro">
+    Each vertical receives a dedicated fine-tuned dataset engineered for that domain's specific reasoning requirements, terminology, and failure modes. Generic AI is not acceptable where error has legal, clinical, or financial consequences.
+  </p>
+  <div class="verticals-grid">
+
+    <div class="vertical finance">
+      <div class="v-icon" aria-hidden="true">FIN</div>
+      <div class="v-status live"><div class="v-status-dot" aria-hidden="true"></div>Live</div>
+      <h3>Financial Risk</h3>
+      <p>Causal modelling of credit risk, liquidity crunch scenarios, covenant analysis, and rate-shock propagation. Decision-support for CFOs, credit officers, and risk committees.</p>
+      <div class="v-tags" aria-label="Capabilities">
+        <span class="v-tag">ICR Analysis</span>
+        <span class="v-tag">Rate Shock Modelling</span>
+        <span class="v-tag">Covenant Monitoring</span>
+        <span class="v-tag">Liquidity Stress</span>
+      </div>
+    </div>
+
+    <div class="vertical law">
+      <div class="v-icon" aria-hidden="true">LAW</div>
+      <div class="v-status soon"><div class="v-status-dot" aria-hidden="true"></div>Dataset in development</div>
+      <h3>Legal Reasoning</h3>
+      <p>Structured causal analysis of statutory text, precedent chains, and contractual obligations. Built for legal teams that need traceable, citation-grounded AI reasoning — not hallucinated summaries.</p>
+      <div class="v-tags" aria-label="Capabilities">
+        <span class="v-tag">Statute Parsing</span>
+        <span class="v-tag">Precedent Chains</span>
+        <span class="v-tag">Contract Analysis</span>
+        <span class="v-tag">Liability Mapping</span>
+      </div>
+    </div>
+
+    <div class="vertical medical">
+      <div class="v-icon" aria-hidden="true">MED</div>
+      <div class="v-status soon"><div class="v-status-dot" aria-hidden="true"></div>Dataset in development</div>
+      <h3>Clinical Decision Support</h3>
+      <p>Differential reasoning, drug interaction analysis, and protocol adherence checking for healthcare institutions. Designed to augment clinical judgment, not replace it — with full audit logging.</p>
+      <div class="v-tags" aria-label="Capabilities">
+        <span class="v-tag">Differential Diagnosis</span>
+        <span class="v-tag">Drug Interactions</span>
+        <span class="v-tag">Protocol Adherence</span>
+        <span class="v-tag">Audit Logging</span>
+      </div>
+    </div>
+
+    <div class="vertical psych">
+      <div class="v-icon" aria-hidden="true">PSY</div>
+      <div class="v-status soon"><div class="v-status-dot" aria-hidden="true"></div>Dataset in development</div>
+      <h3>Psychological Assessment</h3>
+      <p>Structured evaluation support for forensic psychology, risk assessment, and clinical reporting. Causal reasoning over psychometric frameworks with strict interpretability constraints.</p>
+      <div class="v-tags" aria-label="Capabilities">
+        <span class="v-tag">Risk Assessment</span>
+        <span class="v-tag">Forensic Reporting</span>
+        <span class="v-tag">Psychometric Frameworks</span>
+        <span class="v-tag">Interpretability</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ 03 GOVERNANCE ═══════════ -->
+<section class="section reveal" id="gov" aria-labelledby="gov-hd">
+  <div class="section-hd">
+    <span class="section-tag" id="gov-hd">Governance Model</span>
+    <div class="section-rule" aria-hidden="true"></div>
+    <span class="section-num" aria-hidden="true">03</span>
+  </div>
+  <div class="gov-grid">
+    <div class="gov-box primary">
+      <h4>Causal Foundation</h4>
+      <p>Non-Profit IP &amp; do-calculus registry. The intellectual foundation of our reasoning engine is governed as a public good — ensuring no single commercial interest can compromise the integrity baseline.</p>
+    </div>
+    <div class="gov-box secondary">
+      <h4>DokorAI Services</h4>
+      <p>Execution, API &amp; enterprise integration. The commercial entity that deploys, maintains, and supports the infrastructure — operating under strict contractual accountability to the Causal Foundation.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ 04 BENCHMARK ═══════════ -->
+<section class="section reveal" id="benchmark" aria-labelledby="bench-hd">
+  <div class="section-hd">
+    <span class="section-tag" id="bench-hd">Performance Benchmark</span>
+    <div class="section-rule" aria-hidden="true"></div>
+    <span class="section-num" aria-hidden="true">04</span>
   </div>
 
-  <!-- ── HEADER ─────────────────────────────────────────────── -->
-  <header>
-    <div class="logo" aria-label="DokorAI Labs">DOKORAI LABS</div>
-    <div class="header-meta" aria-hidden="true">
-      <div>INFRASTRUCTURE // v2.1</div>
-      <div style="color:var(--border);">CLASSIFIED — AUTHORIZED ACCESS ONLY</div>
+  <div role="tablist" aria-label="Benchmark views" class="bench-tabs" id="bench-tablist">
+    <button role="tab" class="bench-tab" aria-selected="true"  aria-controls="panel-compare" id="tab-compare" tabindex="0">Comparative Analysis</button>
+    <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-sim"     id="tab-sim"     tabindex="-1">Financial Simulation</button>
+    <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-radar"   id="tab-radar"   tabindex="-1">Capability Radar</button>
+    <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-method"  id="tab-method"  tabindex="-1">Methodology</button>
+  </div>
+
+  <div role="tabpanel" class="bench-panel active" id="panel-compare" aria-labelledby="tab-compare">
+    <table class="bench-table">
+      <thead>
+        <tr>
+          <th scope="col">Metric</th>
+          <th scope="col"><span class="badge badge-base">Base Model</span></th>
+          <th scope="col"><span class="badge badge-ft">Fine-Tuned</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Causal Density</td>         <td class="base-val">Linear / Superficial</td>      <td class="ft-val">High (Chain-of-thought)</td></tr>
+        <tr><td>Actionability</td>           <td class="base-val">Descriptive / Theoretical</td> <td class="ft-val">Strategic / Prescriptive</td></tr>
+        <tr><td>Communication Efficiency</td><td class="base-val">Low (Redundant)</td>           <td class="ft-val">High (Executive-level)</td></tr>
+        <tr><td>Risk Analysis Depth</td>     <td class="base-val">Basic</td>                     <td class="ft-val">Advanced (Secondary effects)</td></tr>
+        <tr><td>Strategic Insight</td>       <td class="base-val">Minimal</td>                   <td class="ft-val">High (Decision-support)</td></tr>
+      </tbody>
+    </table>
+    <div class="takeaway" role="note">
+      While the Base model acts as a <strong>dictionary</strong>, the Fine-Tuned model performs as a <strong>strategic analyst</strong> — mapping systemic risks such as the "Dual Squeeze" on liquidity and equity issuance during bearish markets.
     </div>
-  </header>
+  </div>
 
-  <main id="main-content">
-
-    <!-- ── HERO ───────────────────────────────────────────────── -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">Sovereign <span class="accent-word">Intelligence.</span><br>Engineered Accountability.</h1>
-      <p class="hero-sub">Private SaaS for high-stakes decision making.</p>
-      <p class="hero-body">Error is not a statistical variable; it is a choice. At DokorAI Labs, we do not build AI to increase noise; we build it to enforce causal precision in environments of high uncertainty. Sovereign technology for institutions that cannot afford a margin of error.</p>
-    </section>
-
-    <hr class="rule">
-
-    <!-- ── 01 TECHNICAL CORE ──────────────────────────────────── -->
-    <section class="section-wrapper reveal" aria-labelledby="sec-tech">
-      <div class="section-header">
-        <span class="section-label" id="sec-tech">Technical Core</span>
-        <div class="section-line" aria-hidden="true"></div>
-        <span class="section-num" aria-hidden="true">01</span>
+  <div role="tabpanel" class="bench-panel" id="panel-sim" aria-labelledby="tab-sim">
+    <p style="font-size:.75rem;color:var(--text-dim);margin-bottom:1.8rem;line-height:1.8;font-family:var(--mono);">
+      Scenario: Mid-Cap firm — $100M total debt (50% fixed / 50% variable). +100bps base rate hike.
+    </p>
+    <div class="sim-grid">
+      <div class="sim-cell">
+        <div class="sim-label">Interest — Variable (50M)</div>
+        <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val n">$2.0M</span></div>
+        <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val ng">$2.5M</span></div>
+        <div class="bar-wrap"><div class="bar ng" data-w="50"></div></div>
+        <div class="sim-note" style="color:var(--red)">+$0.5M cost</div>
       </div>
-      <p class="tech-desc">Proprietary stack designed for zero-trust environments. Our core integrates an optimized, locally-trained LLM with a hybrid MCP memory layer, enabling real-time causal reasoning without external telemetry or data leakage.</p>
-      <div class="grid">
-        <div class="card">
-          <div class="card-corner tl" aria-hidden="true"></div><div class="card-corner tr" aria-hidden="true"></div>
-          <div class="card-corner bl" aria-hidden="true"></div><div class="card-corner br" aria-hidden="true"></div>
-          <div class="card-tag">MODULE_01</div>
-          <h3>Core</h3>
-          <p>Private LLM: Open weights &amp; custom training.</p>
-        </div>
-        <div class="card">
-          <div class="card-corner tl" aria-hidden="true"></div><div class="card-corner tr" aria-hidden="true"></div>
-          <div class="card-corner bl" aria-hidden="true"></div><div class="card-corner br" aria-hidden="true"></div>
-          <div class="card-tag">MODULE_02</div>
-          <h3>Memory</h3>
-          <p>Hybrid MCP: Vectorized graphs, immutable.</p>
-        </div>
-        <div class="card">
-          <div class="card-corner tl" aria-hidden="true"></div><div class="card-corner tr" aria-hidden="true"></div>
-          <div class="card-corner bl" aria-hidden="true"></div><div class="card-corner br" aria-hidden="true"></div>
-          <div class="card-tag">MODULE_03</div>
-          <h3>Control</h3>
-          <p>Zero-leak architecture. Air-gapped logic.</p>
-        </div>
+      <div class="sim-cell">
+        <div class="sim-label">EBITDA</div>
+        <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val n">$15.0M</span></div>
+        <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val n">$15.0M</span></div>
+        <div class="bar-wrap"><div class="bar ps" data-w="0"></div></div>
+        <div class="sim-note" style="color:var(--text-dim)">No change</div>
       </div>
-    </section>
-
-    <hr class="rule">
-
-    <!-- ── 02 GOVERNANCE ──────────────────────────────────────── -->
-    <section class="section-wrapper reveal" aria-labelledby="sec-gov">
-      <div class="section-header">
-        <span class="section-label" id="sec-gov">Governance Model</span>
-        <div class="section-line" aria-hidden="true"></div>
-        <span class="section-num" aria-hidden="true">02</span>
+      <div class="sim-cell">
+        <div class="sim-label">Interest Total</div>
+        <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val n">$4.25M</span></div>
+        <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val ng">$4.75M</span></div>
+        <div class="bar-wrap"><div class="bar ng" data-w="40"></div></div>
+        <div class="sim-note" style="color:var(--red)">+11.8% increment</div>
       </div>
-      <div class="gov-container">
-        <div class="gov-box primary">
-          <h4>Causal Foundation</h4>
-          <p>Non-Profit IP &amp; do-calculus registry.</p>
-        </div>
-        <div class="gov-box secondary">
-          <h4>DokorAI Services</h4>
-          <p>Execution, API &amp; enterprise integration.</p>
-        </div>
+      <div class="sim-cell">
+        <div class="sim-label">ICR (EBITDA / Int)</div>
+        <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val n">3.53x</span></div>
+        <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val ng">3.16x</span></div>
+        <div class="bar-wrap"><div class="bar ng" data-w="65"></div></div>
+        <div class="sim-note" style="color:var(--red)">−10.5% deterioration</div>
       </div>
-    </section>
-
-    <hr class="rule">
-
-    <!-- ── 03 PERFORMANCE BENCHMARK ──────────────────────────── -->
-    <section class="section-wrapper reveal" aria-labelledby="sec-bench">
-      <div class="section-header">
-        <span class="section-label" id="sec-bench">Performance Benchmark</span>
-        <div class="section-line" aria-hidden="true"></div>
-        <span class="section-num" aria-hidden="true">03</span>
+      <div class="sim-cell">
+        <div class="sim-label">Emission Capacity</div>
+        <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val n">High (P/E 12x)</span></div>
+        <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val ng">Reduced (P/E 9x)</span></div>
+        <div class="bar-wrap"><div class="bar ng" data-w="75"></div></div>
+        <div class="sim-note" style="color:var(--red)">−25% valuation drop</div>
       </div>
-
-      <!-- Tab list — full ARIA tab pattern -->
-      <div
-        role="tablist"
-        aria-label="Benchmark views"
-        class="bench-tabs"
-        id="bench-tablist"
-      >
-        <button role="tab" class="bench-tab" aria-selected="true"  aria-controls="panel-compare" id="tab-compare" tabindex="0">Comparative Analysis</button>
-        <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-sim"     id="tab-sim"     tabindex="-1">Financial Simulation</button>
-        <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-radar"   id="tab-radar"   tabindex="-1">Capability Radar</button>
-        <button role="tab" class="bench-tab" aria-selected="false" aria-controls="panel-method"  id="tab-method"  tabindex="-1">Methodology</button>
+      <div class="sim-cell" style="background:var(--accent-dim);border-left:2px solid var(--accent);display:flex;flex-direction:column;justify-content:center;">
+        <div class="sim-label" style="color:var(--accent)">Key Insight</div>
+        <p style="font-size:.75rem;color:var(--text-mid);line-height:1.8;">A 100bps hike erodes ICR by &gt;10%, threatening covenants while increasing equity dilution costs by ~2%.</p>
       </div>
+    </div>
+  </div>
 
-      <!-- Panel 1: Comparative Table -->
-      <div role="tabpanel" class="bench-panel active" id="panel-compare" aria-labelledby="tab-compare">
-        <table class="bench-table">
-          <thead>
-            <tr>
-              <th scope="col">Metric</th>
-              <th scope="col"><span class="badge badge-base">Base Model</span></th>
-              <th scope="col"><span class="badge badge-ft">Fine-Tuned</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Causal Density</td>         <td class="base-val">Linear / Superficial</td>      <td class="ft-val">High (Chain-of-thought)</td></tr>
-            <tr><td>Actionability</td>           <td class="base-val">Descriptive / Theoretical</td> <td class="ft-val">Strategic / Prescriptive</td></tr>
-            <tr><td>Communication Efficiency</td><td class="base-val">Low (Redundant)</td>           <td class="ft-val">High (Executive-level)</td></tr>
-            <tr><td>Risk Analysis Depth</td>     <td class="base-val">Basic</td>                     <td class="ft-val">Advanced (Secondary effects)</td></tr>
-            <tr><td>Strategic Insight</td>       <td class="base-val">Minimal</td>                   <td class="ft-val">High (Decision-support)</td></tr>
-          </tbody>
-        </table>
-        <div class="takeaway" role="note">
-          While the Base model acts as a <strong>dictionary</strong>, the Fine-Tuned model performs as a <strong>strategic analyst</strong> — mapping systemic risks such as the "Dual Squeeze" on liquidity and equity issuance during bearish markets.
-        </div>
+  <div role="tabpanel" class="bench-panel" id="panel-radar" aria-labelledby="tab-radar">
+    <p style="font-size:.75rem;color:var(--text-dim);margin-bottom:2rem;line-height:1.8;font-family:var(--mono);">
+      Capability radar — Base Model vs. Fine-Tuned across five evaluation dimensions. Cold-start, identical test conditions.
+    </p>
+    <canvas id="radarCanvas" width="560" height="420"
+      style="max-width:100%;display:block;margin:0 auto;"
+      aria-label="Radar chart: Fine-Tuned model scores 85–92% vs Base model 20–30% across all five dimensions">
+    </canvas>
+    <div style="display:flex;gap:2rem;justify-content:center;margin-top:1.5rem;" aria-hidden="true">
+      <div style="display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.6rem;color:var(--text-dim);">
+        <div style="width:22px;height:2px;background:var(--text-dim);opacity:.4;"></div>Base Model
       </div>
-
-      <!-- Panel 2: Financial Simulation -->
-      <div role="tabpanel" class="bench-panel" id="panel-sim" aria-labelledby="tab-sim">
-        <p style="font-size:0.72rem;color:var(--text-dim);margin-bottom:1.8rem;line-height:1.8;">
-          Scenario: Mid-Cap firm — $100M total debt (50% fixed / 50% variable). +100bps base rate hike.
-        </p>
-        <div class="sim-grid">
-          <div class="sim-cell">
-            <div class="sim-cell-label">Interest — Variable (50M)</div>
-            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">$2.0M</span></div>
-            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">$2.5M</span></div>
-            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="50"></div></div>
-            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">+$0.5M cost</div>
-          </div>
-          <div class="sim-cell">
-            <div class="sim-cell-label">EBITDA</div>
-            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">$15.0M</span></div>
-            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neutral">$15.0M</span></div>
-            <div class="delta-bar-wrap"><div class="delta-bar pos" data-width="0"></div></div>
-            <div style="font-size:0.58rem;color:var(--text-dim);margin-top:0.5rem;">No change</div>
-          </div>
-          <div class="sim-cell">
-            <div class="sim-cell-label">Interest Total</div>
-            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">$4.25M</span></div>
-            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">$4.75M</span></div>
-            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="40"></div></div>
-            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">+11.8% increment</div>
-          </div>
-          <div class="sim-cell">
-            <div class="sim-cell-label">ICR (EBITDA / Int)</div>
-            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">3.53x</span></div>
-            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">3.16x</span></div>
-            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="65"></div></div>
-            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">−10.5% deterioration</div>
-          </div>
-          <div class="sim-cell">
-            <div class="sim-cell-label">Emission Capacity</div>
-            <div class="sim-row"><span class="sim-key">Base</span><span class="sim-val neutral">High (P/E 12x)</span></div>
-            <div class="sim-row"><span class="sim-key">Post-Hike</span><span class="sim-val neg">Reduced (P/E 9x)</span></div>
-            <div class="delta-bar-wrap"><div class="delta-bar neg" data-width="75"></div></div>
-            <div style="font-size:0.58rem;color:var(--red);margin-top:0.5rem;">−25% valuation drop</div>
-          </div>
-          <div class="sim-cell" style="display:flex;flex-direction:column;justify-content:center;background:var(--accent-dim);border-left:2px solid var(--accent);">
-            <div class="sim-cell-label" style="color:var(--accent);">Key Insight</div>
-            <p style="font-size:0.7rem;color:var(--text-mid);line-height:1.8;">A 100bps hike erodes ICR by &gt;10%, threatening covenants while increasing equity dilution costs by ~2%.</p>
-          </div>
-        </div>
+      <div style="display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.6rem;color:var(--accent);">
+        <div style="width:22px;height:2px;background:var(--accent);"></div>Fine-Tuned
       </div>
+    </div>
+  </div>
 
-      <!-- Panel 3: Radar Chart -->
-      <div role="tabpanel" class="bench-panel" id="panel-radar" aria-labelledby="tab-radar">
-        <p style="font-size:0.72rem;color:var(--text-dim);margin-bottom:2rem;line-height:1.8;">
-          Capability radar — Base Model vs. Fine-Tuned across five evaluation dimensions. Cold-start, identical test conditions.
-        </p>
-        <canvas id="radarCanvas" width="560" height="420" style="max-width:100%;display:block;margin:0 auto;" aria-label="Radar chart comparing Base Model and Fine-Tuned model capabilities across five dimensions"></canvas>
-        <div style="display:flex;gap:2rem;justify-content:center;margin-top:1.5rem;" aria-hidden="true">
-          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.62rem;color:var(--text-dim);">
-            <div style="width:24px;height:2px;background:var(--text-dim);opacity:0.5;"></div> Base Model
-          </div>
-          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.62rem;color:var(--accent);">
-            <div style="width:24px;height:2px;background:var(--accent);"></div> Fine-Tuned
-          </div>
-        </div>
+  <div role="tabpanel" class="bench-panel" id="panel-method" aria-labelledby="tab-method">
+    <div class="terminal">
+      To ensure a fair and rigorous comparison between the models, all test cases were executed under identical environmental conditions using a <em>'blank context' (cold-start) setup</em> to measure maximum baseline performance.<br><br>
+      It is important to note that these metrics represent the <em>raw performance</em> of the LLMs in isolation. This evaluation <em>does not factor in</em> the historical memory and multi-agent orchestration capabilities provided by the <em>GBRAIN via MCP</em> (Model Context Protocol), which would significantly enhance the operational intelligence and context-awareness of the system in a production environment.
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════ CONVERSION BLOCK ═══════════ -->
+<div class="section reveal" style="padding-top:0;padding-bottom:0;">
+  <div class="conversion">
+    <div class="conv-inner">
+      <div class="conv-copy">
+        <h2>Ready to deploy in<br>your environment?</h2>
+        <p>We work with a small number of institutional clients at any given time. If your organisation operates in a domain where AI output carries real accountability, let's talk.</p>
       </div>
-
-      <!-- Panel 4: Methodology -->
-      <div role="tabpanel" class="bench-panel" id="panel-method" aria-labelledby="tab-method">
-        <div class="terminal-block">
-          To ensure a fair and rigorous comparison between the models, all test cases were executed under identical environmental conditions using a <em>'blank context' (cold-start) setup</em> to measure maximum baseline performance.<br><br>
-          It is important to note that these metrics represent the <em>raw performance</em> of the LLMs in isolation. This evaluation <em>does not factor in</em> the historical memory and multi-agent orchestration capabilities provided by the <em>GBRAIN via MCP</em> (Model Context Protocol), which would significantly enhance the operational intelligence and context-awareness of the system in a production environment.
-        </div>
+      <div class="conv-actions">
+        <a href="mailto:dokorailabs@proton.me?subject=Deployment%20Inquiry" class="btn btn-primary">
+          Request Briefing <span class="arr" aria-hidden="true">→</span>
+        </a>
+        <a href="mailto:dokorailabs@proton.me?subject=Technical%20Documentation%20Request" class="btn btn-outline">
+          Technical Docs <span class="arr" aria-hidden="true">→</span>
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
 
-    <hr class="rule">
+<hr class="rule" style="margin-top:0;">
 
-    <!-- ── 04 SECURE INQUIRY ──────────────────────────────────── -->
-    <section class="section-wrapper reveal" aria-labelledby="sec-inquiry">
-      <div class="section-header">
-        <span class="section-label" id="sec-inquiry">Secure Inquiry</span>
-        <div class="section-line" aria-hidden="true"></div>
-        <span class="section-num" aria-hidden="true">04</span>
-      </div>
+<!-- ═══════════ 05 SECURE INQUIRY ═══════════ -->
+<section class="section reveal" id="contact" aria-labelledby="contact-hd">
+  <div class="section-hd">
+    <span class="section-tag" id="contact-hd">Secure Inquiry</span>
+    <div class="section-rule" aria-hidden="true"></div>
+    <span class="section-num" aria-hidden="true">05</span>
+  </div>
 
-      <div class="contact-card">
-        <div class="contact-corner tl" aria-hidden="true"></div>
-        <div class="contact-corner tr" aria-hidden="true"></div>
-        <div class="contact-corner bl" aria-hidden="true"></div>
-        <div class="contact-corner br" aria-hidden="true"></div>
+  <div class="contact-card">
+    <div class="c-corner tl" aria-hidden="true"></div>
+    <div class="c-corner tr" aria-hidden="true"></div>
+    <div class="c-corner bl" aria-hidden="true"></div>
+    <div class="c-corner br" aria-hidden="true"></div>
 
-        <h3>Deployment Inquiry</h3>
-        <a class="contact-email" href="mailto:dokorailabs@proton.me">dokorailabs@proton.me</a>
+    <h3>Deployment Inquiry</h3>
+    <p class="contact-tagline">All communications are end-to-end encrypted via ProtonMail. For highest security, use our PGP key below.</p>
+    <a class="contact-email" href="mailto:dokorailabs@proton.me">dokorailabs@proton.me</a>
 
-        <!-- CTA BLOCK -->
-        <div class="cta-block">
-          <span class="cta-label">Ready to deploy?</span>
-          <a class="cta-btn" href="mailto:dokorailabs@proton.me?subject=Deployment%20Inquiry" aria-label="Request a deployment briefing via encrypted email">
-            Request Briefing <span class="arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="cta-btn cta-btn-ghost" href="mailto:dokorailabs@proton.me?subject=Technical%20Documentation%20Request" aria-label="Request technical documentation">
-            Technical Docs <span class="arrow" aria-hidden="true">→</span>
-          </a>
-        </div>
+    <div class="contact-cta">
+      <span class="contact-cta-label">Get started:</span>
+      <a href="mailto:dokorailabs@proton.me?subject=Deployment%20Inquiry&body=Organisation%3A%0ADomain%3A%20(Finance%20%2F%20Law%20%2F%20Medical%20%2F%20Psychology)%0AUse%20case%3A%0A" class="btn btn-primary" aria-label="Request a deployment briefing via encrypted email">
+        Request Briefing <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <a href="mailto:dokorailabs@proton.me?subject=Technical%20Documentation%20Request" class="btn btn-ghost" aria-label="Request technical documentation">
+        Technical Docs <span class="arr" aria-hidden="true">→</span>
+      </a>
+    </div>
 
-        <div class="contact-key">
-          <span class="contact-key-label">PGP KEY</span>
-          <div class="contact-key-val">KEY: 0x4F2A9B8C1D3E5F7A6B9C0D1E2F3A4B5C6D7E8F90</div>
-        </div>
-      </div>
-    </section>
+    <div class="contact-key">
+      <span class="key-label">PGP KEY</span>
+      <div class="key-val">0x4F2A9B8C1D3E5F7A6B9C0D1E2F3A4B5C6D7E8F90</div>
+    </div>
+  </div>
+</section>
 
-  </main><!-- /#main-content -->
+</main>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
-  <footer>
-    <p>All operations validated through the VaultOfTartarus (V.O.T.) framework. Our causal registry ensures absolute consistency, if the data does not align with the V.O.T. integrity baseline, it is purged.</p>
-    <div class="footer-sig">
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-left">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#tech">Infrastructure</a>
+        <a href="#verticals">Verticals</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#gov">Governance</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p>All operations validated through the VaultOfTartarus (V.O.T.) framework. Our causal registry ensures absolute consistency — if the data does not align with the V.O.T. integrity baseline, it is purged.</p>
+      <p class="footer-copy">&copy; 2026 DokorAI Labs. All rights reserved.</p>
+    </div>
+    <div class="footer-right" aria-hidden="true">
       <div>DOKORAI LABS</div>
       <div>V.O.T. FRAMEWORK</div>
-      <div class="footer-copy">&copy; 2026 DokorAI Labs. All rights reserved.</div>
+      <div style="margin-top:.4rem;color:var(--text-dim);">INFRASTRUCTURE // v2.1</div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       SCRIPTS — modular, event-driven, no globals leaked
-  ════════════════════════════════════════════════════════════ -->
-  <script>
-  (() => {
-    'use strict';
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS — IIFE, no globals
+════════════════════════════════════════════════ -->
+<script>
+(() => {
+  'use strict';
 
-    /* ── 1. SCROLL REVEAL ─────────────────────────────────────── */
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          revealObserver.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  /* 1 ─ SCROLL REVEAL ────────────────────────── */
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
 
-    /* ── 2. DELTA BAR ANIMATION ───────────────────────────────── */
-    function animateBars() {
-      document.querySelectorAll('#panel-sim .delta-bar').forEach(bar => {
-        // Reset first so re-entry re-triggers the CSS transition
-        bar.style.transition = 'none';
-        bar.style.width = '0%';
-        // Force reflow to flush the reset, then re-enable transition
-        void bar.offsetWidth;
-        bar.style.transition = '';
-        bar.style.width = (bar.dataset.width || '0') + '%';
-      });
-    }
+  /* 2 ─ MOBILE NAV ───────────────────────────── */
+  const burger = document.getElementById('nav-burger');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Close on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
 
 
-    /* ── 3. RADAR CHART ───────────────────────────────────────── */
-    let radarDrawn = false;
+  /* 3 ─ BAR ANIMATION ────────────────────────── */
+  function animateBars() {
+    document.querySelectorAll('#panel-sim .bar').forEach(bar => {
+      bar.style.transition = 'none';
+      bar.style.width = '0%';
+      void bar.offsetWidth; // force reflow
+      bar.style.transition = '';
+      bar.style.width = (bar.dataset.w || '0') + '%';
+    });
+  }
 
-    function drawRadar() {
-      const canvas = document.getElementById('radarCanvas');
-      if (!canvas) return;
 
-      // DPR-aware sizing for crisp rendering on Retina/HiDPI
-      const dpr    = window.devicePixelRatio || 1;
-      const cssW   = canvas.clientWidth  || 560;
-      const cssH   = canvas.clientHeight || 420;
-      canvas.width  = cssW * dpr;
-      canvas.height = cssH * dpr;
+  /* 4 ─ RADAR CHART (DPR-aware Canvas) ────────── */
+  let radarReady = false;
 
-      const ctx  = canvas.getContext('2d');
-      ctx.scale(dpr, dpr);
+  function drawRadar() {
+    const canvas = document.getElementById('radarCanvas');
+    if (!canvas) return;
+    const dpr  = window.devicePixelRatio || 1;
+    const cssW = canvas.clientWidth  || 560;
+    const cssH = canvas.clientHeight || 420;
+    canvas.width  = Math.round(cssW * dpr);
+    canvas.height = Math.round(cssH * dpr);
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
 
-      const W  = cssW, H = cssH;
-      const cx = W / 2, cy = H / 2 + 10;
-      const R  = Math.min(W, H) * 0.32;
+    const W = cssW, H = cssH;
+    const cx = W / 2, cy = H / 2 + 8;
+    const R  = Math.min(W, H) * 0.30;
 
-      const labels = ['Causal Density', 'Actionability', 'Comm. Efficiency', 'Risk Depth', 'Strategic Insight'];
-      const base   = [0.28, 0.30, 0.25, 0.30, 0.20];
-      const ft     = [0.88, 0.85, 0.90, 0.87, 0.92];
-      const n      = labels.length;
-      const step   = (Math.PI * 2) / n;
-      const start  = -Math.PI / 2;
+    const labels = ['Causal Density', 'Actionability', 'Comm.\nEfficiency', 'Risk Depth', 'Strategic\nInsight'];
+    const base   = [0.28, 0.30, 0.25, 0.30, 0.20];
+    const ft     = [0.88, 0.85, 0.90, 0.87, 0.92];
+    const n      = labels.length;
+    const step   = (Math.PI * 2) / n;
+    const start  = -Math.PI / 2;
 
-      ctx.clearRect(0, 0, W, H);
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0a0a0a';
+    ctx.fillRect(0, 0, W, H);
 
-      // Background
-      ctx.fillStyle = '#0a0a0a';
-      ctx.fillRect(0, 0, W, H);
-
-      // Grid rings + percentage labels
-      [0.25, 0.5, 0.75, 1.0].forEach((r, ri) => {
-        ctx.beginPath();
-        for (let i = 0; i < n; i++) {
-          const a = start + i * step;
-          const x = cx + Math.cos(a) * R * r;
-          const y = cy + Math.sin(a) * R * r;
-          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-        }
-        ctx.closePath();
-        ctx.strokeStyle = ri === 3 ? '#27272a' : '#1a1a1d';
-        ctx.lineWidth = 1;
-        ctx.stroke();
-
-        // Ring label
-        if (r < 1) {
-          ctx.fillStyle = '#3f3f46';
-          ctx.font = `400 9px 'JetBrains Mono', monospace`;
-          ctx.textAlign = 'left';
-          ctx.fillText(`${r * 100}%`, cx + 4, cy - R * r + 3);
-        }
-      });
-
-      // Axis spokes
+    // Rings
+    [0.25, 0.5, 0.75, 1.0].forEach((r, ri) => {
+      ctx.beginPath();
       for (let i = 0; i < n; i++) {
         const a = start + i * step;
-        ctx.beginPath();
-        ctx.moveTo(cx, cy);
-        ctx.lineTo(cx + Math.cos(a) * R, cy + Math.sin(a) * R);
-        ctx.strokeStyle = '#27272a';
-        ctx.lineWidth = 1;
-        ctx.stroke();
+        const x = cx + Math.cos(a) * R * r;
+        const y = cy + Math.sin(a) * R * r;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
       }
-
-      // Draw a filled polygon shape
-      function drawShape(vals, strokeColor, fillColor) {
-        ctx.beginPath();
-        for (let i = 0; i < n; i++) {
-          const a = start + i * step;
-          const x = cx + Math.cos(a) * R * vals[i];
-          const y = cy + Math.sin(a) * R * vals[i];
-          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-        }
-        ctx.closePath();
-        ctx.fillStyle = fillColor;
-        ctx.fill();
-        ctx.strokeStyle = strokeColor;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
+      ctx.closePath();
+      ctx.strokeStyle = ri === 3 ? '#27272a' : '#1a1a1d';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      if (r < 1) {
+        ctx.fillStyle = '#3f3f46';
+        ctx.font = `400 9px 'JetBrains Mono', monospace`;
+        ctx.textAlign = 'left';
+        ctx.fillText(`${r * 100}%`, cx + 4, cy - R * r + 3);
       }
-
-      drawShape(base, 'rgba(161,161,170,0.5)', 'rgba(113,113,122,0.07)');
-      drawShape(ft,   '#3B82F6',               'rgba(59,130,246,0.13)');
-
-      // Nodes on fine-tuned shape
-      for (let i = 0; i < n; i++) {
-        const a = start + i * step;
-        const x = cx + Math.cos(a) * R * ft[i];
-        const y = cy + Math.sin(a) * R * ft[i];
-        // Glow
-        const grd = ctx.createRadialGradient(x, y, 0, x, y, 8);
-        grd.addColorStop(0, 'rgba(59,130,246,0.3)');
-        grd.addColorStop(1, 'rgba(59,130,246,0)');
-        ctx.beginPath();
-        ctx.arc(x, y, 8, 0, Math.PI * 2);
-        ctx.fillStyle = grd;
-        ctx.fill();
-        // Dot
-        ctx.beginPath();
-        ctx.arc(x, y, 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = '#3B82F6';
-        ctx.fill();
-      }
-
-      // Axis labels
-      ctx.font = `700 10px 'JetBrains Mono', monospace`;
-      ctx.fillStyle = '#a1a1aa';
-      for (let i = 0; i < n; i++) {
-        const a    = start + i * step;
-        const dist = R + 30;
-        const lx   = cx + Math.cos(a) * dist;
-        const ly   = cy + Math.sin(a) * dist;
-
-        // Multi-word labels wrap to 2 lines
-        const words = labels[i].split(' ');
-        ctx.textAlign = lx < cx - 5 ? 'right' : lx > cx + 5 ? 'left' : 'center';
-        const lineH = 13;
-        const totalH = words.length * lineH;
-        words.forEach((word, wi) => {
-          ctx.fillText(word.toUpperCase(), lx, ly - totalH / 2 + wi * lineH + 5);
-        });
-      }
-
-      radarDrawn = true;
-    }
-
-
-    /* ── 4. TAB CONTROLLER ────────────────────────────────────── *
-     *
-     *  Implements the ARIA Authoring Practices Guide (APG)
-     *  "Tabs Pattern" with:
-     *   - aria-selected managed on buttons
-     *   - tabindex roving (only active tab is in tab order)
-     *   - Arrow key navigation (←/→ moves focus + activates)
-     *   - Enter/Space activate focused tab (redundant but explicit)
-     *   - Home/End jump to first/last tab
-     *
-     * ─────────────────────────────────────────────────────────── */
-    const tablist  = document.getElementById('bench-tablist');
-    const tabs     = Array.from(tablist.querySelectorAll('[role="tab"]'));
-    const panels   = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
-
-    // Panel-specific side effects
-    const sideEffects = {
-      'panel-sim'  : animateBars,
-      'panel-radar': () => { if (!radarDrawn) drawRadar(); },
-    };
-
-    function activateTab(tab, setFocus = true) {
-      // Deactivate all
-      tabs.forEach(t => {
-        t.setAttribute('aria-selected', 'false');
-        t.setAttribute('tabindex', '-1');
-      });
-      panels.forEach(p => p.classList.remove('active'));
-
-      // Activate selected
-      tab.setAttribute('aria-selected', 'true');
-      tab.setAttribute('tabindex', '0');
-      const panelId = tab.getAttribute('aria-controls');
-      const panel   = document.getElementById(panelId);
-      panel.classList.add('active');
-
-      if (setFocus) tab.focus();
-
-      // Run side effect if registered
-      if (sideEffects[panelId]) sideEffects[panelId]();
-    }
-
-    tabs.forEach((tab, idx) => {
-      // Click
-      tab.addEventListener('click', () => activateTab(tab, false));
-
-      // Keyboard
-      tab.addEventListener('keydown', (e) => {
-        let next = null;
-        if (e.key === 'ArrowRight') next = tabs[(idx + 1) % tabs.length];
-        if (e.key === 'ArrowLeft')  next = tabs[(idx - 1 + tabs.length) % tabs.length];
-        if (e.key === 'Home')       next = tabs[0];
-        if (e.key === 'End')        next = tabs[tabs.length - 1];
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateTab(tab); }
-        if (next) { e.preventDefault(); activateTab(next); }
-      });
     });
 
-  })();
-  </script>
+    // Spokes
+    for (let i = 0; i < n; i++) {
+      const a = start + i * step;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + Math.cos(a) * R, cy + Math.sin(a) * R);
+      ctx.strokeStyle = '#27272a'; ctx.lineWidth = 1; ctx.stroke();
+    }
+
+    // Shape helper
+    function shape(vals, stroke, fill) {
+      ctx.beginPath();
+      for (let i = 0; i < n; i++) {
+        const a = start + i * step;
+        const x = cx + Math.cos(a) * R * vals[i];
+        const y = cy + Math.sin(a) * R * vals[i];
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fillStyle = fill; ctx.fill();
+      ctx.strokeStyle = stroke; ctx.lineWidth = 1.5; ctx.stroke();
+    }
+
+    shape(base, 'rgba(161,161,170,0.5)', 'rgba(113,113,122,0.07)');
+    shape(ft,   '#3b82f6',               'rgba(59,130,246,0.13)');
+
+    // FT nodes with glow
+    for (let i = 0; i < n; i++) {
+      const a = start + i * step;
+      const x = cx + Math.cos(a) * R * ft[i];
+      const y = cy + Math.sin(a) * R * ft[i];
+      const g = ctx.createRadialGradient(x, y, 0, x, y, 10);
+      g.addColorStop(0, 'rgba(59,130,246,0.35)');
+      g.addColorStop(1, 'rgba(59,130,246,0)');
+      ctx.beginPath(); ctx.arc(x, y, 10, 0, Math.PI*2);
+      ctx.fillStyle = g; ctx.fill();
+      ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI*2);
+      ctx.fillStyle = '#3b82f6'; ctx.fill();
+    }
+
+    // Labels (multi-line support)
+    ctx.fillStyle = '#a1a1aa';
+    ctx.font = `700 9.5px 'JetBrains Mono', monospace`;
+    for (let i = 0; i < n; i++) {
+      const a    = start + i * step;
+      const dist = R + 32;
+      const lx   = cx + Math.cos(a) * dist;
+      const ly   = cy + Math.sin(a) * dist;
+      const lines = labels[i].split('\n');
+      const lh    = 13;
+      ctx.textAlign = lx < cx - 10 ? 'right' : lx > cx + 10 ? 'left' : 'center';
+      lines.forEach((line, li) => {
+        ctx.fillText(line.toUpperCase(), lx, ly - (lines.length - 1) * lh / 2 + li * lh);
+      });
+    }
+    radarReady = true;
+  }
+
+
+  /* 5 ─ TAB CONTROLLER (ARIA APG pattern) ────── */
+  const tablist = document.getElementById('bench-tablist');
+  const tabs    = Array.from(tablist.querySelectorAll('[role="tab"]'));
+  const panels  = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+  const fx = {
+    'panel-sim'  : animateBars,
+    'panel-radar': () => { if (!radarReady) drawRadar(); }
+  };
+
+  function activateTab(tab, moveFocus = true) {
+    tabs.forEach(t => {
+      t.setAttribute('aria-selected', 'false');
+      t.setAttribute('tabindex', '-1');
+    });
+    panels.forEach(p => p.classList.remove('active'));
+
+    tab.setAttribute('aria-selected', 'true');
+    tab.setAttribute('tabindex', '0');
+    const panelId = tab.getAttribute('aria-controls');
+    document.getElementById(panelId).classList.add('active');
+    if (moveFocus) tab.focus();
+
+    const fn = fx[panelId];
+    if (fn) fn();
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => activateTab(tab, false));
+    tab.addEventListener('keydown', e => {
+      const map = {
+        ArrowRight : tabs[(i + 1) % tabs.length],
+        ArrowLeft  : tabs[(i - 1 + tabs.length) % tabs.length],
+        Home       : tabs[0],
+        End        : tabs[tabs.length - 1],
+      };
+      if (map[e.key]) { e.preventDefault(); activateTab(map[e.key]); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateTab(tab); }
+    });
+  });
+
+})();
+</script>
 
 </body>
 </html>
