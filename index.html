@@ -51,9 +51,61 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── SELF-HOSTED FONTS ─────────────────────────────────────
+       Files live in ./fonts/ next to index.html.
+       font-display:swap — text stays visible during load.
+    ───────────────────────────────────────────────────────── */
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('fonts/JetBrainsMono-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('fonts/JetBrainsMono-ExtraBold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
 
   <style>
     /* ─────────────────────────────────────────────────────────
@@ -935,7 +987,7 @@
       <div class="v-icon" aria-hidden="true">LAW</div>
       <div class="v-status soon"><div class="v-status-dot" aria-hidden="true"></div>Dataset in development</div>
       <h3>Legal Reasoning</h3>
-      <p>Structured causal analysis of statutory text, precedent chains, and contractual obligations. Built for legal teams that need traceable, citation-grounded AI reasoning — not hallucinated summaries.</p>
+      <p>Structured causal analysis of statutory text, precedent chains, and contractual obligations. Built for legal teams that need traceable, citation-grounded AI reasoning, not hallucinated summaries.</p>
       <div class="v-tags" aria-label="Capabilities">
         <span class="v-tag">Statute Parsing</span>
         <span class="v-tag">Precedent Chains</span>
@@ -948,7 +1000,7 @@
       <div class="v-icon" aria-hidden="true">MED</div>
       <div class="v-status soon"><div class="v-status-dot" aria-hidden="true"></div>Dataset in development</div>
       <h3>Clinical Decision Support</h3>
-      <p>Differential reasoning, drug interaction analysis, and protocol adherence checking for healthcare institutions. Designed to augment clinical judgment, not replace it — with full audit logging.</p>
+      <p>Differential reasoning, drug interaction analysis, and protocol adherence checking for healthcare institutions. Designed to augment clinical judgment, not replace it, with full audit logging.</p>
       <div class="v-tags" aria-label="Capabilities">
         <span class="v-tag">Differential Diagnosis</span>
         <span class="v-tag">Drug Interactions</span>
